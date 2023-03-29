@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="email" placeholder="enter your email">
+        <input type="password" id="pass" placeholder="enter your password">
+        <input type="button" value="login" onclick="login()">
+    </form>
+    
+</body>
+</html>
+<script>
+    let form=document.querySelector("#form");
+    const login=()=>{
+        let payload={
+        email:form.email.value,
+        pass:form.pass.value
+    }
+    // console.log(payload)
+    fetch("http://localhost:4500/users/login",{
+        
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        
+        body :JSON.stringify(payload)
+    }).then(res=>res.json())
+    .then(res=>{
+        console.log(res)
+        localStorage.setItem("token",res.token)
+    })
+    .catch(err=>console.log(err))
+    }
+    
+</script>
