@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/stylt.css">
+    <link rel="stylesheet" href="../style/index.css">
+</head>
+
+<body>
+    <div id="maindivforall">
+
+        <div id="container">
+
+            <!-- this is the navbigation bar -->
+            <nav id="topisde">Save up to 70% Off | Shop Now</nav>
+        </div>
+
+    </div>
+
+    <div class="nav">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+               
+                
+            <!-- <div id="wishlist_img"> -->
+                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #777;">
+                    <path
+                        d="M20.485,4.6A6.005,6.005,0,0,0,12,4.6a6,6,0,0,0-8.485,8.485L12,21.571l8.485-8.485A6.005,6.005,0,0,0,20.485,4.6Zm-1.414,7.071L12,18.743,4.929,11.672A4,4,0,1,1,11.15,6.745L12,8.117l.85-1.372a3.987,3.987,0,0,1,.564-.73,4.1,4.1,0,0,1,5.657,0A4,4,0,0,1,19.071,11.672Z">
+                    </path>
+                </svg>
+            </span>
+            <!-- </div> -->
+
+              
+        </div>
+    </div>
+
+
+
+
+
+
+     <h1 style="font-size: 20px; font-weight: 300; font-family: sans-serif ">Sign in to your account</h1> 
+    
+    <p>Our brand new site is live. Please create a new account to explore this experience.</p> 
+
+             <!-- <div id="flex">
+               
+              -->
+        
+    
+    
+    
+        <form id="form">
+          <label>First Name</label>
+          <input type="text" id="firstname" placeholder="enter your Firstname" required />
+          <label>Last Name</label>
+          <input type="text" id="lastname" placeholder="enter your Lastname" required/>
+          <label>Email</label>
+          <input type="email" id="email" placeholder="enter your Email" required/>
+          <label>Password</label>
+          <input type="password" id="pass" placeholder="enter your Password" required/>
+          <input id="submit_btn" type="button" value="Submit" onclick="singup()">
+        <closeform></closeform></form>
+    </div>
+    <!-- <p>
+      By clicking the Sign Up button,you agree to our <br />
+      <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+    </p>
+  </div>
+  <p class="para-2">
+    Already have an account? <a href="login.html">Login here</a>
+  </p> -->
+ 
+    
+</body>
+</html>
+<script>
+    let form=document.querySelector("#form");
+    const singup=()=>{
+        let payload={
+        firstname:form.firstname.value,
+        lastname:form.lastname.value,
+        email:form.email.value,
+        pass:form.pass.value,
+    }
+    // console.log(payload)
+
+    // console.log(payload)
+    fetch("http://localhost:4500/users/register",{
+        
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        
+        body :JSON.stringify(payload)
+    }).then(res=>res.json())
+    .then(res=>
+        console.log(res)
+        
+    )
+    .catch(err=>console.log(err.message))
+    
+    }
+
+</script>
