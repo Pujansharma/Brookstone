@@ -163,3 +163,51 @@ width: 20%;
 .image-grid{
     margin-top: 1%;
 }
+@media screen and (max-width: 768px) {
+  /* Styles for mobile devices */
+  .navbar {
+    position: static;
+  }
+  #logo {
+    width: 30%;
+    padding-left: 0;
+  }
+  .search {
+    width: 70%;
+  }
+  #search-icon {
+    margin-left: -25%;
+    margin-top: 25%;
+  }
+  .cart-login {
+    width: 30%;
+  }
+  .icon-search {
+    height: 30px;
+  }
+  #user-icon, #favorite-icon, #cart-icon {
+    height: 3vh;
+    margin-right: 5%;
+    margin-top: 5%;
+  }
+  .drop-downs, .massage-dropdown, .wellness-dropdown, .sleep-dropdown {
+    width: 100%;
+    left: 0;
+  }
+  .list1, .list2 {
+    width: 100%;
+  }
+  #massage-img, #foot-image {
+    margin-top: 2%;
+  }
+  #massage-chairs, #massage-guns, #neck-back, #best-sellers {
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+  .wakeup-slider {
+    width: 100%;
+  }
+  .image-grid {
+    width: 100%;
+  }
+}

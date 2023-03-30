@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #restaurant-container{
+            height: auto;
+            width: 50%;
+            margin: auto;
+            display: block;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="restaurant-container">
+        <!-- Here Append All the Products  -->
+        
+      </div>
+    
+</body>
+<script>
+    let bag=[];
+    const url = `http://localhost:4600/users/get`;
+    // All your JS code for Home Page goes here
+    fetch(url).then((res)=>res.json())
+    .then((data)=>{
+      bag=data
+      console.log(bag)
+      displayfun(data)
+    });
+    let main=document.querySelector("#restaurant-container");
+    function displayfun(data){
+      
+      data.forEach(el => {
+        let div=document.createElement("div");
+        
+        // let img=document.createElement("img");
+        // img.setAttribute("src",el.image);
+        // img.classList.add("prodocutimg");
+        
+
+        let _id=document.createElement("h2");
+        _id.textContent=el._id;
+
+        let firstname=document.createElement("p");
+        firstname.textContent=el.firstname;
+    
+        let lastname=document.createElement("p");
+        lastname.textContent=el.lastname;
+
+        let email=document.createElement("p");
+        email.textContent=el.email;
+
+        let pass=document.createElement("p");
+        pass.textContent=el.pass;
+    
+        btn=document.createElement("button");
+        btn.textContent="delete"
+    
+        
+    
+    
+        div.append(_id,firstname,lastname,email,pass,btn);
+        document.querySelector("#restaurant-container").append(div)
+      });
+    }
+    // let filter=document.querySelector(".search");
+    // filter.addEventListener("input",function(event){
+    //   document.querySelector("#restaurant-container").textContent=null;
+    //   let select=event.target.value;
+    //   if(select==""){
+    //     displayfun(bag)
+    //   }
+    //   let fil=bag.filter(function(el){
+    //     return el.name==select;
+    //   })
+    //   displayfun(fil);
+    //   console.log(fil)
+    // })
+    
+    
+    
+    // filter---------------------------
+    // let filter=document.querySelector("#filter");
+    //     filter.addEventListener("change",function(event){
+    //       document.querySelector("#restaurant-container").textContent=null;
+    //       let select=event.target.value;
+    //       if(select==""){
+    //         displayfun(bag)
+    //       }
+    //       let fil=bag.filter(function(el){
+    //         return el.type==select;
+    //       })
+    //       displayfun(fil);
+    //       console.log(fil)
+    //     })
+    
+    
+    
+    </script>
+    
+</html>

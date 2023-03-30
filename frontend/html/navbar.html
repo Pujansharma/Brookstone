@@ -6,11 +6,475 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brrokstome</title>
+    <!-- <link rel="stylesheet" href="nav.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+   <style>
+    *{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+   
+}
+.nav-searchbar{
+    /* position: fixed; */
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 3px 5px 4px;
+    background-color: whitesmoke;
+   
     
+}
+#logo{
+padding-left:2%;
+width: 20%;
+
+}
+#logo-image{
+    height: 8vh;
+}
+.search{
+    width: 50%;
+    display: flex;
+}
+#search-input{
+    height:60%;
+    width: 90%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2%;
+    border-radius: 6px;
+    border: 2px solid lightgrey;
+    outline: none;
+}
+#search-icon{
+    height: 10%;
+}
+.cart-login{
+   
+    display: flex;
+    justify-content:right;
+    cursor: pointer;
+    width: 20%;
+    /* border: 1px solid red; */
+}
+.icon-search{
+    width: 2%;
+    height: 50px;
+    /* border: 1px solid red; */
+}
+#search-icon{
+    height: 40%;
+    margin-left: -410%;
+    margin-top: 81%;
+}
+#user-icon, #favorite-icon, #cart-icon{
+    height: 4vh;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+.drop-downs{
+    z-index: 2;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 2% 0px 2%;
+    padding-bottom: 2%;
+    cursor: pointer;
+}
+
+.drop-downs p:hover{
+  text-decoration:underline
+}
+
+.massage-dropdown{
+    display: flex;
+    z-index: 4;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.wellness-dropdown{
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.sleep-dropdown{
+    width: 100%;
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    margin-top: 8%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
+.list1{
+    width: 60%;
+    display: flex;
+
+}
+.list2{
+    width: 40%;
+    display: flex;
+
+}
+
+#massage-img, #foot-image{
+    margin-top: 6%;
+    width: 90%;
+}
+
+#massage-chairs, #massage-guns, #neck-back, #best-sellers{
+    margin-top: 5%;
+    margin-left: 8%;
+}
+.hidden{
+    display: none;
+}
+
+.main-body{
+    width: 100%;
+    display: flex;
+    margin-bottom: 3%;
+}
+.wakeup-slider{
+    padding-top: 8%;
+    z-index: -1;
+    width: 60%;
+}
+.wakeup-slider img{
+    margin-top: 0.7%;
+    cursor: pointer;
+    width: 100%;
+}
+.image-grid{
+    padding-top: 8%;
+    display: grid;
+    padding-left: 1%;
+    column-gap: 2%;
+    grid-template-columns: repeat(2,1fr);
+    width: 40%;
+}
+.image-grid img{
+    width: 100%;
+}
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+   
+}
+.image-grid{
+    margin-top: 1%;
+}
+@media only screen and (max-width: 768px) {
+    .search{
+      /* z-index: 0;
+       */
+       padding-top: 79px;
+       width: 100%;
+    }#logo{
+        height: 120px;
+    }#search-icon{
+    height: 10%;
+    /* padding-top: 32px; */
+}nav .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* background: grey; */
+      transition: top 1s ease 0s;
+      display: none;
+    }
+    nav .mainMenu .closeMenu {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    nav .openMenu {
+      display: block;
+    }
+     /* .mainMenu:hover {
+      /* background: none; */
+      /* color: green; */
+    } 
+    .icons i {
+      display: inline-block;
+      padding: 12px;
+    }.openMenu{
+        width: 100px;
+    }.mainMenu{
+        background-color: grey;
+        color: white;
+    } nav .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgb(0, 0, 0);
+      transition: top 1s ease 0s;
+      display: none;
+    }nav .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      z-index: 10;
+      /* flex-direction: column;
+      justify-content: center;
+      align-items: center; */
+      background: grey;
+      transition: top 1s ease 0s;
+      display: none;
+    }
+    
+  
+  
+  
+   </style>
 </head>
 
 <body>
-    
+    <nav>
+        
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        
+    </nav>
+
+    <nav class="navbar">
+
+        <div class="nav-searchbar">
+            <div id="logo">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+                    id="logo-image">
+            </div>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Search">
+
+            </div>
+            <div class="icon-search">
+                <img src="https://cdn-icons-png.flaticon.com/512/482/482631.png" id="search-icon">
+            </div>
+            <div class="cart-login">
+
+                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+                    id="user-icon">
+                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+                    id="favorite-icon">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256"
+                    id="cart-icon">
+            </div>
+        </div>
+        <!-- <ul class="mainMenu"> -->
+           
+            
+        <div class="drop-downs mainMenu" >
+            <p id="new-product-page">New</p>
+            <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+            <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+            <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+            <p>Home</p>
+            <p>Wine & Bar</p>
+            <p>Outdoor</p>
+            <p>Technology</p>
+            <p>Travel</p>
+            <p>Accessories</p>
+            <p>Entertainment</p>
+            <p>Gifts</p>
+            <p>Sale</p>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+        </div>
+        
+    <!-- </ul> -->
+    </nav>
+
+    <!-- *****************************************DROP-DOWNS-CONTAINERS************************************************* -->
+    <!-- ///////////Massage//////////////// -->
+
+    <div class="massage-dropdown hidden">
+        <div class="list1">
+            <div id="massage-chairs">
+                <p>Massage Chairs</p>
+                <p>Eye</p>
+                <p>Foot & Leg</p>
+            </div>
+            <div id="massage-guns">
+                <p>Massage Guns</p>
+                <p>Hand</p>
+                <p>Intimate</p>
+            </div>
+            <div id="neck-back">
+                <p>Neck & Back</p>
+                <p>Rollers</p>
+                <p>Seat Topper</p>
+            </div>
+            <div id="best-sellers">
+                <p>Best Sellers</p>
+                <p>Viel All</p>
+            </div>
+        </div>
+        <div class="list2">
+            <div id="massagechair-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/massage_01.webp?v=1657749435"
+                    id="massage-img">
+                <p>Massage Chair Guide</p>
+            </div>
+            <div id="foot-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/rei-thumb_1.jpg?v=1661531383"
+                    id="foot-image">
+                <p>Foot & Leg Massage</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- //////WELLNESS//////////////// -->
+
+    <div class="wellness-dropdown hidden">
+        <div class="list1">
+            <div id="massage-chairs">
+                <p>Bath</p>
+                <p>Cold & Heat Therapy</p>
+                <p>Comfort</p>
+                <p>Cleansers</p>
+            </div>
+            <div id="massage-guns">
+                <p>Cupping</p>
+                <p>Eye Care</p>
+                <p>Grooming</p>
+                <p>Hair Care</p>
+            </div>
+            <div id="neck-back">
+                <p>LED</p>
+                <p>Meditation</p>
+                <p>Skin Care</p>
+                <p>Sound Machines</p>
+            </div>
+            <div id="best-sellers">
+                <p>Best Sellers</p>
+                <p>Viel All</p>
+            </div>
+        </div>
+        <div class="list2">
+            <div id="massagechair-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/Bath.jpg?v=1657922268"
+                    id="massage-img">
+                <p>Bath</p>
+            </div>
+            <div id="foot-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/skin.jpg?v=1657922635" id="foot-image">
+                <p>Skin Care</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ///////////////SLEEP////////////////// -->
+
+    <div class="sleep-dropdown hidden">
+        <div class="list1">
+            <div id="massage-chairs">
+                <p>Air Quality</p>
+                <p>Alarms</p>
+                <p>Bedding</p>
+            </div>
+            <div id="massage-guns">
+                <p>Clocks</p>
+                <p>Comforts</p>
+                <p>Mattress</p>
+            </div>
+            <div id="neck-back">
+                <p>Pillows</p>
+                <p>Intimate Pillows</p>
+                <p>Sound Machines</p>
+            </div>
+            <div id="best-sellers">
+                <p>View All</p>
+            </div>
+        </div>
+        <div class="list2">
+            <div id="massagechair-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/pillow.jpg?v=1657922838"
+                    id="massage-img">
+                <p>Pillows</p>
+            </div>
+            <div id="foot-image-div">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/l.jpg?v=1661531875" id="foot-image">
+                <p>Sound Machines</p>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="nav.js"></script>
+<!-- <script src="nav.js"></script> -->
+<script>
+    const MassagePopup = () => {
+    document.querySelector(".massage-dropdown").classList.remove("hidden");
+}
+
+const Massageleave = () => {
+    document.querySelector(".massage-dropdown").classList.add("hidden");
+}
+
+const WellnessPopup = () =>{
+    document.querySelector(".wellness-dropdown").classList.remove("hidden");
+}
+
+const Wellnessleave = () => {
+    document.querySelector(".wellness-dropdown").classList.add("hidden");
+}
+
+const SleepPopup = () => {
+    document.querySelector(".sleep-dropdown").classList.remove("hidden");
+}
+const Sleepleave = () => {
+    document.querySelector(".sleep-dropdown").classList.add("hidden");
+}
+const mainMenu = document.querySelector('.mainMenu');
+const closeMenu = document.querySelector('.closeMenu');
+const openMenu = document.querySelector('.openMenu');
+const menu_items = document.querySelectorAll('nav .mainMenu li a');
+
+
+
+
+openMenu.addEventListener('click',show);
+closeMenu.addEventListener('click',close);
+
+// close menu when you click on a menu item 
+menu_items.forEach(item => {
+    item.addEventListener('click',function(){
+        close();
+    })
+})
+
+function show(){
+    mainMenu.style.display = 'flex';
+    mainMenu.style.top = '0';
+}
+function close(){
+    mainMenu.style.top = '-100%';
+}
+</script>
 </html>

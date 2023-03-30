@@ -46,6 +46,17 @@ userRouter.post("/login",async(req,res)=>{
 })
 
 
+userRouter.get("/get", async(req,res)=>{
+    let query=req.query;
+    try {
+        const data= await UserModel.find(query)
+        res.status(200).send(data)
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
+})
+
+
 module.exports={
     userRouter
 }
