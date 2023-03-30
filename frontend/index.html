@@ -11,7 +11,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style/nav.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+    
+   
 </head>
 
 <body>
@@ -428,6 +430,10 @@ $('.best-sellers-slider').slick({
     slidesToShow: 5,
     slidesToScroll: 3
 });
+let product=document.querySelector("#new-product-page")
+product.addEventListener("click",()=>{
+    window.location.href="html/admin.html"
+})
 </script>
 <script src="nav.js"></script>
 </html>

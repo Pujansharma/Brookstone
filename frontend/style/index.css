@@ -164,4 +164,59 @@ width: 80%;
 #faq{
     margin-left: 25%;
     padding-top: 5%;
+}@media only screen and (max-width: 768px) {
+/* apply these styles when screen size is less than or equal to 768px */
+.main-body {
+flex-direction: column;
+margin-bottom: 5%;
 }
+
+.wakeup-slider, .image-grid {
+width: 100%;
+padding-top: 5%;
+margin-bottom: 5%;
+}
+
+.wakeup-slider img, .image-grid img {
+margin-top: 0;
+}
+
+.featured-slider img, .best-sellers-slider img {
+width: 100%;
+margin-left: 0;
+}
+
+#featured-brands-heading, #best-seller-heading, #catogeries-heading {
+font-size: 120%;
+margin-top: 5%;
+margin-bottom: 3%;
+}
+
+.catogeries-card1 img, .catogeries-card2 img {
+width: 100%;
+}
+
+.shop-the-guide {
+margin-bottom: 5%;
+}
+
+#shop-now-image {
+width: 100%;
+margin-left: 0;
+}
+
+.footer {
+flex-direction: column;
+padding: 3%;
+padding-top: 5%;
+}
+
+#sign-up-now-footer, #contact-footer, #faq {
+margin: 5% auto;
+}
+}
+@media only screen and (max-width: 768px) {
+    .featured-slider, .best-sellers-slider {
+      z-index: 0;
+    }
+  }
