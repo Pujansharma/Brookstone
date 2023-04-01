@@ -1,316 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../style/index.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../style/nav.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
-   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <style>
-      /* All Your css for Home page goes here  */
-      #restaurant-container{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: auto;
-        gap: 20px;
-      }.prodocutimg{
-        width: 50%;
-      }.nav{
-        padding-top: 205px;
-      }
+        /* Style for the main container */
+/* Base styles */
+#main_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #f8f9fa;
+}
+
+#users {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+#restaurant-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#restaurant-container > div {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#restaurant-container > div img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#restaurant-container > div h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#restaurant-container > div p {
+  font-size: 16px;
+  margin: 10px 20px;
+}
+
+#id {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#id:hover {
+  background-color: black;
+}
+
+.modal-dialog {
+  max-width: 500px;
+}
+
+.modal-content {
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-footer {
+  background-color: #f8f9fa;
+  border-top: none;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+  #main_container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #users {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  #restaurant-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #restaurant-container > div {
+    margin-bottom: 20px;
+  }
+
+  #restaurant-container > div h2 {
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  #restaurant-container > div p {
+    font-size: 14px;
+    margin: 5px 10px;
+  }
+
+  #id {
+    margin-top: 20px;
+font-size: 20px;
+padding: 8px 16px;
+}
+
+.modal-dialog {
+max-width: 100%;
+}
+
+.modal-body {
+padding: 20px;
+}
+}
+
     </style>
-  </head>
-
-  <body>
-
-
+</head>
+<body>
+  <div id="users">
+    <h1>    Users Detailes
+      <!-- <span ><input id="logout" type="button" value="log out"></span> -->
+    </h1>
     
-
-
-
-    <nav class="navbar">
-
-      <div class="nav-searchbar">
-          <div id="logo">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
-                  id="logo-image">
-          </div>
-          <div class="search">
-              <input type="text" class="search" id="search-input" placeholder="Search">
-
-          </div>
-          <div class="icon-search">
-              <!-- <img src="" > -->
-              <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
-          </div>
-          <div class="cart-login">
+  </div>
+  <div id="main_container">
+    <div id="restaurant-container">
+        <!-- Here Append All the Products  -->
+        <!-- <label for="firstname">firstname</label><br> -->
+        <!-- <label id = "firstname">
+          Welcome to GeeksforGeeks
+      </label> -->
+        
+      </div>
+    
+      <!-- Scrollable modal -->
+      <button type="button" id="id" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">ADD DATA</button>
+     
+     
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Data</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">URL:</label>
+                  <input type="text" id="url" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Name:</label>
+                  <input type="text" id="name" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Price:</label>
+                  <input type="text" id="price" class="form-control" id="recipient-name">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="btn" class="btn btn-primary">Send message</button>
               
-              <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
-                  id="user-icon">
-              <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
-                  id="favorite-icon">
-              <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256"
-                  id="cart-icon">
+            </div>
+            <!-- <span><button>hy</button></span> -->
           </div>
+        </div>
       </div>
-
-      <div class="drop-downs">
-          <p id="new-product-page">New</p>
-          <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
-          <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
-          <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
-          <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
-          <!-- <p>Home</p> -->
-          <p>Wine & Bar</p>
-          <p>Outdoor</p>
-          <p>Technology</p>
-          <p>Travel</p>
-          <p>Accessories</p>
-          <p>Entertainment</p>
-          <p>Gifts</p>
-          <p>Sale</p>
-      </div>
-  </nav>
-
-  <!-- *****************************************DROP-DOWNS-CONTAINERS************************************************* -->
-  <!-- ///////////Massage//////////////// -->
-
-  <div class="massage-dropdown hidden">
-      <div class="list1">
-          <div id="massage-chairs">
-              <p>Massage Chairs</p>
-              <p>Eye</p>
-              <p>Foot & Leg</p>
-          </div>
-          <div id="massage-guns">
-              <p>Massage Guns</p>
-              <p>Hand</p>
-              <p>Intimate</p>
-          </div>
-          <div id="neck-back">
-              <p>Neck & Back</p>
-              <p>Rollers</p>
-              <p>Seat Topper</p>
-          </div>
-          <div id="best-sellers">
-              <p>Best Sellers</p>
-              <p>Viel All</p>
-          </div>
-      </div>
-      <div class="list2">
-          <div id="massagechair-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/massage_01.webp?v=1657749435"
-                  id="massage-img">
-              <p>Massage Chair Guide</p>
-          </div>
-          <div id="foot-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/rei-thumb_1.jpg?v=1661531383"
-                  id="foot-image">
-              <p>Foot & Leg Massage</p>
-          </div>
-      </div>
-  </div>
-
-
-  <!-- //////WELLNESS//////////////// -->
-
-  <div class="wellness-dropdown hidden">
-      <div class="list1">
-          <div id="massage-chairs">
-              <p>Bath</p>
-              <p>Cold & Heat Therapy</p>
-              <p>Comfort</p>
-              <p>Cleansers</p>
-          </div>
-          <div id="massage-guns">
-              <p>Cupping</p>
-              <p>Eye Care</p>
-              <p>Grooming</p>
-              <p>Hair Care</p>
-          </div>
-          <div id="neck-back">
-              <p>LED</p>
-              <p>Meditation</p>
-              <p>Skin Care</p>
-              <p>Sound Machines</p>
-          </div>
-          <div id="best-sellers">
-              <p>Best Sellers</p>
-              <p>Viel All</p>
-          </div>
-      </div>
-      <div class="list2">
-          <div id="massagechair-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/Bath.jpg?v=1657922268"
-                  id="massage-img">
-              <p>Bath</p>
-          </div>
-          <div id="foot-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/skin.jpg?v=1657922635" id="foot-image">
-              <p>Skin Care</p>
-          </div>
-      </div>
-  </div>
-
-  <!-- ///////////////SLEEP////////////////// -->
-
-  <div class="sleep-dropdown hidden">
-      <div class="list1">
-          <div id="massage-chairs">
-              <p>Air Quality</p>
-              <p>Alarms</p>
-              <p>Bedding</p>
-          </div>
-          <div id="massage-guns">
-              <p>Clocks</p>
-              <p>Comforts</p>
-              <p>Mattress</p>
-          </div>
-          <div id="neck-back">
-              <p>Pillows</p>
-              <p>Intimate Pillows</p>
-              <p>Sound Machines</p>
-          </div>
-          <div id="best-sellers">
-              <p>View All</p>
-          </div>
-      </div>
-      <div class="list2">
-          <div id="massagechair-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/pillow.jpg?v=1657922838"
-                  id="massage-img">
-              <p>Pillows</p>
-          </div>
-          <div id="foot-image-div">
-              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/l.jpg?v=1661531875" id="foot-image">
-              <p>Sound Machines</p>
-          </div>
-      </div>
-  </div>
-
-
-
-<!-- //productpage-------------------- -->
-
-
-<!-- <div class="nav">
-  <h1>Masai Restaurant Finder</h1>
-  <a href="./index.html">Home</a>
-  <a href="./favourites.html">Favourites</a>
-</div> -->
-<div class="nav">
-  <select id="filter">
-    <option value="">Filter By Category</option>
-    <option value="cafe">cafe</option>
-    <option value="ethnic">ethnic</option>
-    <option value="fast_food">fast_food</option>
-  </select>
-</div>
-<h1 id="alert"></h1>
-<div id="restaurant-container">
-  <!-- Here Append All the Products  -->
-</div>
+      
+    </div>
 </body>
 <script>
-let bag=[];
-const url = `http://localhost:4600/data/get`;
-// All your JS code for Home Page goes here
-fetch(url).then((res)=>res.json())
-.then((data)=>{
-  bag=data
-  console.log(bag)
-  displayfun(data)
-});
-let cartItem=JSON.parse(localStorage.getItem("Favourites"))||[];
-let main=document.querySelector("#restaurant-container");
-function displayfun(data){
-  
-  data.forEach(el => {
-    let div=document.createElement("div");
+    let bag=[];
+    const url = `https://creepy-yak-frock.cyclic.app/users/get`;
+    // All your JS code for Home Page goes here
+    fetch(url).then((res)=>res.json())
+    .then((data)=>{
+      bag=data
+      console.log(bag)
+      displayfun(data)
+    });
+    // let main=document.querySelector("#restaurant-container");
+    function displayfun(data){      
+      data.forEach(el => {
+        let div=document.createElement("div");
+        let _id=document.createElement("h2");
+        _id.textContent=`ID:  ${el._id}`;
+        _id.classList.add("_id");
+
+        let firstname=document.createElement("p");
+        firstname.textContent=`FIRSTNAME:  ${el.firstname}`;
+        firstname.classList.add("firstname");
+
+        let lastname=document.createElement("p");
+        lastname.textContent=`Lastname : ${el.lastname}`;
+        lastname.classList.add("lastname");
+
+        let email=document.createElement("p");
+        email.textContent=`EMAIL : ${el.email}`;
+        email.classList.add("email");
+
+        let pass=document.createElement("p");
+        pass.textContent=`PASSWORD : ${el.pass}`;
+        pass.classList.add("pass");
+            
+        // let btn=document.getElementById('id')
+        // // btn.classList.add("btn");
+        // btn.textContent=`${el._id}`
+        // btn.addEventListener("click",function(){
+        // })
+        
     
-    let img=document.createElement("img");
-    img.setAttribute("src",el.image);
-    img.classList.add("prodocutimg");
-
-    let name=document.createElement("h2");
-    name.textContent=el.name;
-
-    let price=document.createElement("p");
-    price.textContent=el.price;
-
-    btn=document.createElement("button");
-    btn.textContent="Favourites"
-
-    btn.addEventListener("click",function(){
-      let cartItem=JSON.parse(localStorage.getItem("Favourites"));
-    if(cartItem==null){
-      cartItem=[];
-    } 
-    let cart=false;
-    for(let i=0;i<cartItem.length;i++){
-      if(cartItem[i].id===el.id){
-        cart=true
-        break;
-      }
+    
+        div.append(_id,firstname,lastname,email,pass);
+        document.querySelector("#restaurant-container").append(div)
+      });
     }
-    if(cart==true){
-      document.querySelector("#alert").textContent="Restaurant Already in Favourites"
-    }else{
-      cartItem.push({...el})
-      localStorage.setItem("Favourites",JSON.stringify(cartItem))
-      document.querySelector("#alert").textContent="Restaurant Added To Favourites"
-    }
-    })
-
-
-    div.append(img,name,price,btn);
-    document.querySelector("#restaurant-container").append(div)
-  });
+    // let filter=document.querySelector(".search");
+    // filter.addEventListener("input",function(event){
+    //   document.querySelector("#restaurant-container").textContent=null;
+    //   let select=event.target.value;
+    //   if(select==""){
+    //     displayfun(bag)
+    //   }
+    //   let fil=bag.filter(function(el){
+    //     return el.name==select;
+    //   })
+    //   displayfun(fil);
+    //   console.log(fil)
+    // })
+    
+    
+    // let data=new dataModel(url,name,price);
+    // console.log(data)
+   
+function Data(n,m,l){
+  this.image=n;
+  this.name=m;
+  this.price=l;
 }
-let filter=document.querySelector(".search");
-filter.addEventListener("input",function(event){
-  document.querySelector("#restaurant-container").textContent=null;
-  let select=event.target.value;
-  if(select==""){
-    displayfun(bag)
-  }
-  let fil=bag.filter(function(el){
-    return el.name==select;
-  })
-  displayfun(fil);
-  console.log(fil)
-})
+
+    let add=document.querySelector("#btn");
+    add.addEventListener("click",()=>{
+      let image=document.querySelector("#url").value;
+      let name=document.querySelector("#name").value;
+      let price=document.querySelector("#price").value;
+      
+      let newdat=new Data(image,name,price)
+      console.log(newdat);
+
+      fetch("https://creepy-yak-frock.cyclic.app/data/add",{
+        method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(newdat)
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+      }).catch((err)=>{
+        console.log(err)
+
+      })
 
 
-
-// filter---------------------------
-// let filter=document.querySelector("#filter");
-//     filter.addEventListener("change",function(event){
-//       document.querySelector("#restaurant-container").textContent=null;
-//       let select=event.target.value;
-//       if(select==""){
-//         displayfun(bag)
-//       }
-//       let fil=bag.filter(function(el){
-//         return el.type==select;
-//       })
-//       displayfun(fil);
-//       console.log(fil)
-//     })
-
-
-
-</script>
-
-
-
-
-
+    })
+    
+    
+    </script>
+    
 </html>
-<script src="../nav.js"></script>

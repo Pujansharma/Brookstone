@@ -1,107 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/nav.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+   
     <style>
-        #restaurant-container{
-            height: auto;
-            width: 50%;
-            margin: auto;
-            display: block;
-            border: 1px solid red;
-        }
+      /* All Your css for Home page goes here  */
+      #restaurant-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding-top: 100px;
+  
+}
+
+/* Style the product items */
+.prodocutimg {
+  width: 40%;
+  height: 200px;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #f6a623;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}#logo-image{
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f89b0d;
+}
+
+/* Hide all items by default */
+/* #restaurant-container > div {
+  display: none; 
+ } */
+
+/* Show only items that match the selected filter */
+#restaurant-container > div[data-category=""] {
+  display: block;
+}
+
+#restaurant-container > div[data-category="cafe"],
+#restaurant-container > div[data-category="ethnic"],
+#restaurant-container > div[data-category="fast_food"] {
+  display: block;
+}
     </style>
-</head>
-<body>
-    <div id="restaurant-container">
-        <!-- Here Append All the Products  -->
-        
-      </div>
+  </head>
+
+  <body>
+
+
     
+
+
+
+    <nav class="navbar">
+
+      <div class="nav-searchbar">
+          <div id="logo">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+                  id="logo-image">
+          </div>
+          <div class="search">
+              <input type="text" class="search" id="search-input" placeholder="Search">
+
+          </div>
+          <div class="icon-search">
+              <!-- <img src="" > -->
+              <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
+          </div>
+          <div class="cart-login">
+              
+              <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+                  id="user-icon">
+              <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+                  id="favorite-icon">
+              <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256"
+                  id="cart-icon">
+          </div>
+      </div>
+
+      <div class="drop-downs">
+          <p id="new-product-page">New</p>
+          <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+          <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+          <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+          <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
+          <!-- <p>Home</p> -->
+          <p>Wine & Bar</p>
+          <p>Outdoor</p>
+          <p>Technology</p>
+          <p>Travel</p>
+          <p>Accessories</p>
+          <p>Entertainment</p>
+          <p>Gifts</p>
+          <p>Sale</p>
+      </div>
+  </nav>
+
+  <!-- *****************************************DROP-DOWNS-CONTAINERS************************************************* -->
+  <!-- ///////////Massage//////////////// -->
+
+  <div class="massage-dropdown hidden">
+      <div class="list1">
+          <div id="massage-chairs">
+              <p>Massage Chairs</p>
+              <p>Eye</p>
+              <p>Foot & Leg</p>
+          </div>
+          <div id="massage-guns">
+              <p>Massage Guns</p>
+              <p>Hand</p>
+              <p>Intimate</p>
+          </div>
+          <div id="neck-back">
+              <p>Neck & Back</p>
+              <p>Rollers</p>
+              <p>Seat Topper</p>
+          </div>
+          <div id="best-sellers">
+              <p>Best Sellers</p>
+              <p>Viel All</p>
+          </div>
+      </div>
+      <div class="list2">
+          <div id="massagechair-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/massage_01.webp?v=1657749435"
+                  id="massage-img">
+              <p>Massage Chair Guide</p>
+          </div>
+          <div id="foot-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/rei-thumb_1.jpg?v=1661531383"
+                  id="foot-image">
+              <p>Foot & Leg Massage</p>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- //////WELLNESS//////////////// -->
+
+  <div class="wellness-dropdown hidden">
+      <div class="list1">
+          <div id="massage-chairs">
+              <p>Bath</p>
+              <p>Cold & Heat Therapy</p>
+              <p>Comfort</p>
+              <p>Cleansers</p>
+          </div>
+          <div id="massage-guns">
+              <p>Cupping</p>
+              <p>Eye Care</p>
+              <p>Grooming</p>
+              <p>Hair Care</p>
+          </div>
+          <div id="neck-back">
+              <p>LED</p>
+              <p>Meditation</p>
+              <p>Skin Care</p>
+              <p>Sound Machines</p>
+          </div>
+          <div id="best-sellers">
+              <p>Best Sellers</p>
+              <p>Viel All</p>
+          </div>
+      </div>
+      <div class="list2">
+          <div id="massagechair-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/Bath.jpg?v=1657922268"
+                  id="massage-img">
+              <p>Bath</p>
+          </div>
+          <div id="foot-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/skin.jpg?v=1657922635" id="foot-image">
+              <p>Skin Care</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- ///////////////SLEEP////////////////// -->
+
+  <div class="sleep-dropdown hidden">
+      <div class="list1">
+          <div id="massage-chairs">
+              <p>Air Quality</p>
+              <p>Alarms</p>
+              <p>Bedding</p>
+          </div>
+          <div id="massage-guns">
+              <p>Clocks</p>
+              <p>Comforts</p>
+              <p>Mattress</p>
+          </div>
+          <div id="neck-back">
+              <p>Pillows</p>
+              <p>Intimate Pillows</p>
+              <p>Sound Machines</p>
+          </div>
+          <div id="best-sellers">
+              <p>View All</p>
+          </div>
+      </div>
+      <div class="list2">
+          <div id="massagechair-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/pillow.jpg?v=1657922838"
+                  id="massage-img">
+              <p>Pillows</p>
+          </div>
+          <div id="foot-image-div">
+              <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/l.jpg?v=1661531875" id="foot-image">
+              <p>Sound Machines</p>
+          </div>
+      </div>
+  </div>
+
+
+
+<!-- //productpage-------------------- -->
+
+
+<!-- <div class="nav">
+  <h1>Masai Restaurant Finder</h1>
+  <a href="./index.html">Home</a>
+  <a href="./favourites.html">Favourites</a>
+</div> -->
+<div class="nav">
+  <select id="filter">
+    <option value="">Featured</option>
+    <option value="cafe">cafe</option>
+    <option value="ethnic">ethnic</option>
+    <option value="fast_food">fast_food</option>
+  </select>
+</div>
+<h1 id="alert"></h1>
+<div id="restaurant-container">
+  <!-- Here Append All the Products  -->
+  
+</div>
 </body>
 <script>
-    let bag=[];
-    const url = `http://localhost:4600/users/get`;
-    // All your JS code for Home Page goes here
-    fetch(url).then((res)=>res.json())
-    .then((data)=>{
-      bag=data
-      console.log(bag)
-      displayfun(data)
-    });
-    let main=document.querySelector("#restaurant-container");
-    function displayfun(data){
-      
-      data.forEach(el => {
-        let div=document.createElement("div");
-        
-        // let img=document.createElement("img");
-        // img.setAttribute("src",el.image);
-        // img.classList.add("prodocutimg");
-        
+let bag=[];
+const url = `https://creepy-yak-frock.cyclic.app/data/get`;
+// All your JS code for Home Page goes here
+fetch(url).then((res)=>res.json())
+.then((data)=>{
+  bag=data
+  console.log(bag)
+  displayfun(data)
+});
+// let cartItem=JSON.parse(localStorage.getItem("Favourites"))||[];
+let main=document.querySelector("#restaurant-container");
+function displayfun(data){
+  
+  // data.forEach(el => {
+  //   let div=document.createElement("div");
+    
+  //   let img=document.createElement("img");
+  //   img.setAttribute("src",el.image);
+  //   img.classList.add("prodocutimg");
+  //   // img.setAttribute("lable",hello)
 
-        let _id=document.createElement("h2");
-        _id.textContent=el._id;
+  //   let name=document.createElement("h2");
+  //   name.textContent=el.name;
 
-        let firstname=document.createElement("p");
-        firstname.textContent=el.firstname;
-    
-        let lastname=document.createElement("p");
-        lastname.textContent=el.lastname;
+  //   let price=document.createElement("p");
+  //   price.textContent=el.price;
 
-        let email=document.createElement("p");
-        email.textContent=el.email;
+  //   btn=document.createElement("button");
+  //   btn.textContent="Favourites"
 
-        let pass=document.createElement("p");
-        pass.textContent=el.pass;
+
+
+    data.forEach(el => {
+    let div=document.createElement("div");
     
-        btn=document.createElement("button");
-        btn.textContent="delete"
-    
-        
-    
-    
-        div.append(_id,firstname,lastname,email,pass,btn);
-        document.querySelector("#restaurant-container").append(div)
-      });
-    }
-    // let filter=document.querySelector(".search");
-    // filter.addEventListener("input",function(event){
-    //   document.querySelector("#restaurant-container").textContent=null;
-    //   let select=event.target.value;
-    //   if(select==""){
-    //     displayfun(bag)
+    let img=document.createElement("img");
+    img.setAttribute("src",el.image);
+    img.classList.add("prodocutimg");
+
+    let name=document.createElement("h2");
+    name.textContent=el.name;
+
+    let price=document.createElement("p");
+    price.textContent=el.price;
+
+    btn=document.createElement("button");
+    btn.textContent="Favourites"
+
+    btn.addEventListener("click",function(){
+      let cartItem=JSON.parse(localStorage.getItem("Favourites"));
+    if(cartItem==null){
+      cartItem=[];
+    } 
+    // let cart=false;
+    // for(let i=0;i<cartItem.length;i++){
+    //   if(cartItem[i].id===el.id){
+    //     cart=true
+    //     break;
     //   }
-    //   let fil=bag.filter(function(el){
-    //     return el.name==select;
-    //   })
-    //   displayfun(fil);
-    //   console.log(fil)
-    // })
+    // }
+    // if(cart==true){
+    //   document.querySelector("#alert").textContent="Restaurant Already in Favourites"
+    // }else{
+      cartItem.push({...el})
+      console.log(cartItem)
+      localStorage.setItem("Favourites",JSON.stringify(cartItem))
+      document.querySelector("#alert").textContent="Restaurant Added To Favourites"
+    // }
     
+    })
     
-    
-    // filter---------------------------
-    // let filter=document.querySelector("#filter");
-    //     filter.addEventListener("change",function(event){
-    //       document.querySelector("#restaurant-container").textContent=null;
-    //       let select=event.target.value;
-    //       if(select==""){
-    //         displayfun(bag)
-    //       }
-    //       let fil=bag.filter(function(el){
-    //         return el.type==select;
-    //       })
-    //       displayfun(fil);
-    //       console.log(fil)
-    //     })
-    
-    
-    
-    </script>
-    
+    div.setAttribute("data-category", el.category);
+
+div.append(img,name,price,btn);
+document.querySelector("#restaurant-container").append(div)
+});
+}
+let filter=document.querySelector("#filter");
+filter.addEventListener("change", function(event) {
+  let category = event.target.value;
+  let items = document.querySelectorAll("#restaurant-container > div");
+  
+  // Show only items that match the selected filter
+  items.forEach(item => {
+    if (category === "" || item.getAttribute("data-category") === category) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+  displayfun(fil);
+  console.log(fil)
+});
+  
+
+
+
+
+// filter---------------------------
+// let filter=document.querySelector("#filter");
+//     filter.addEventListener("change",function(event){
+//       document.querySelector("#restaurant-container").textContent=null;
+//       let select=event.target.value;
+//       if(select==""){
+//         displayfun(bag)
+//       }
+//       let fil=bag.filter(function(el){
+//         return el.type==select;
+//       })
+//       displayfun(fil);
+//       console.log(fil)
+//     })
+let logo=document.querySelector("#logo-image");
+logo.addEventListener("click",()=>{
+  window.location.href="/frontend/index.html"
+})
+let product = document.querySelector("#new-product-page")
+    product.addEventListener("click", () => {
+        window.location.href = "./product.html"
+    })
+    let userslogo = document.querySelector("#user-icon")
+    userslogo.addEventListener("click", () => {
+        window.location.href = "./register.html"
+    })
+    let cartlogo = document.querySelector("#cart-icon")
+    cartlogo.addEventListener("click", () => {
+        let tokendata = localStorage.getItem("token")
+        if (tokendata) {
+            window.location.href = "./cart.html"
+        }else{
+            alert("Please Login First!")
+        }
+        
+    })
+
+
+</script>
+
+
+
+
+
 </html>
+<script src="../nav.js"></script>
