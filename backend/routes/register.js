@@ -55,6 +55,20 @@ userRouter.get("/get", async(req,res)=>{
         res.status(400).send(error.message)
     }
 })
+// userRouter.patch("/update/:id",async(req,res)=>{
+//     const ID=req.params.id;
+//     const pass=req.body;
+    
+//     try {
+//         bcrypt.hash(pass, 5, async (err, hash) => {
+//             const user= new UserModel({pass:hash})
+//         let data= await UserModel.findOneAndUpdate({email:ID},user);
+//         res.status(200).send({"mssg":"password was updateted"})
+//     });
+//     } catch (error) {
+//         res.status(400).send(error.message)
+//     }
+// })
 
 
 module.exports={

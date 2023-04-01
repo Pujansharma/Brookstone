@@ -1,149 +1,248 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-In</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign-In</title>
+  <link rel="stylesheet" href="../style/fotter.css">
+  <link rel="stylesheet" href="../style/nav.css">
 </head>
 <style>
-    * {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  * {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+
+  /* *******************************Signin***************************** */
+
+  .sign-in-container {
+    padding: 3%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  #logo-image {
+    cursor: pointer;
+  }
+
+
+  .sign-in-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-register {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .login,
+  .register {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+
+  .login {
+    margin-right: 10px;
+  }
+
+  #sign-in-btn,
+  #submit-btn {
+    width: 100%;
+    height: 50px;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #sign-in-btn {
+    background-color: #65c297;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  #submit-btn {
+    background-color: white;
+    color: black;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  #submit-btn:hover {
+    background-color: #50514f;
+    color: white;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+
+  @media screen and (min-width: 768px) {
+
+    .login,
+    .register {
+      width: 45%;
+      margin-bottom: 0;
     }
 
-    /* *******************************Signin***************************** */
+    .login {
+      margin-right: 10%;
+    }
+  }
 
-    .sign-in-container {
-        padding: 3%;
-        max-width: 800px;
-        margin: auto;
-      }
-
-      .sign-in-heading {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .login-register {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .login,
-      .register {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 30px;
-      }
-
-      .login {
-        margin-right: 10px;
-      }
-
-      #sign-in-btn,
-      #submit-btn {
-        width: 100%;
-        height: 50px;
-        letter-spacing: 4px;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-
-      #sign-in-btn {
-        background-color: #65c297;
-        color: white;
-        border: none;
-        margin-bottom: 20px;
-      }
-
-      #submit-btn {
-        background-color: white;
-        color: black;
-        outline: none;
-        border-radius: 10px;
-        border: 1px solid black;
-      }
-
-      #submit-btn:hover {
-        background-color: #50514f;
-        color: white;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        margin-bottom: 20px;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      @media screen and (min-width: 768px) {
-        .login,
-        .register {
-          width: 45%;
-          margin-bottom: 0;
-        }
-        .login {
-          margin-right: 10%;
-        }
-      }
+  @media screen and (max-width: 768px) {
+    .navbar {
+      visibility: hidden;
+    }
+  }
 </style>
 
 <body>
-    <!-- ********************************navbar*********************************** -->
+  <!-- ********************************navbar*********************************** -->
+  <nav class="navbar">
 
+    <div class="nav-searchbar">
+      <div id="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+          id="logo-image">
+      </div>
+      <div class="search">
+        <input type="text" id="search-input" placeholder="Search">
 
-    <!-- ***********************************************Signin************************ -->
-    <div class="sign-in-container">
-        <div class="sign-in-heading">
-            <h3>Sign in to your account</h3>
-            <p id="our-brand">Our brand new site is live. Please create a new account to explore this experience.</p>
-        </div>
-        <div class="login-register">
-            <div class="login">
-                <h2>Login</h2>
-                <p>If you have an account, please sign in with your email address.</p>
-                <label for="email">Email</label><br>
-                <input type="text" id="email-login"><br>
-                <label for="pass">Password</label><br>
-                <input type="password" id="pass-login"><br>
-                <button id="sign-in-btn" onclick="login()">SIGN IN</button>
-                <p>Forget your password ?</p>
-            </div>
-            <div class="register">
-                <h2>Create Customer</h2>
-                <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and
-                    more.</p>
-                <form id="form">
-                    <label for="firstName">First Name</label><br>
-                <input id="firstName" type="text" ><br>
-                <label for="lastName">Last Name</label><br>
-                <input type="text" id="lastName"><br>
-                <label for="email">Email</label><br>
-                <input type="text" id="email"><br>
-                <label for="password">Password</label><br>
-                <input type="password" id="pass"><br>
-                
-                </form>
-                <button id="submit-btn" onclick="singup()">SUBMIT</button>
-            </div>
-        </div>
+      </div>
+      <div class="icon-search">
+        <!-- <img src="" > -->
+        <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
+      </div>
+      <div class="cart-login">
+
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+          id="user-icon">
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+          id="favorite-icon">
+        <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256" id="cart-icon">
+      </div>
     </div>
-    <!-- ***********************************FOOTER*************************************** -->
+
+    <div class="drop-downs">
+      <p id="new-product-page">New</p>
+      <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+      <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+      <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+      <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
+      <!-- <p>Home</p> -->
+      <p>Wine & Bar</p>
+      <p>Outdoor</p>
+      <p>Technology</p>
+      <p>Travel</p>
+      <p>Accessories</p>
+      <p>Entertainment</p>
+      <p>Gifts</p>
+      <p>Sale</p>
+    </div>
+  </nav>
+
+
+  <!-- ***********************************************Signin************************ -->
+  <div class="sign-in-container">
+    <div class="sign-in-heading">
+      <h3>Sign in to your account</h3>
+      <p id="our-brand">Our brand new site is live. Please create a new account to explore this experience.</p>
+    </div>
+    <div class="login-register">
+      <div class="login">
+        <h2>Login</h2>
+        <p>If you have an account, please sign in with your email address.</p>
+        <label for="email">Email</label><br>
+        <input type="text" id="email-login"><br>
+        <label for="pass">Password</label><br>
+        <input type="password" id="pass-login"><br>
+        <button id="sign-in-btn" onclick="login()">SIGN IN</button>
+        <p>Forget your password ?</p>
+      </div>
+      <div class="register">
+        <h2>Create Customer</h2>
+        <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and
+          more.</p>
+        <form id="form">
+          <label for="firstName">First Name</label><br>
+          <input id="firstName" type="text"><br>
+          <label for="lastName">Last Name</label><br>
+          <input type="text" id="lastName"><br>
+          <label for="email">Email</label><br>
+          <input type="text" id="email"><br>
+          <label for="password">Password</label><br>
+          <input type="password" id="pass"><br>
+
+        </form>
+        <button id="submit-btn" onclick="singup()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+  <!-- ***********************************FOOTER*************************************** -->
+
+  <footer>
+    <div class="footer">
+      <div class="stay-loop">
+        <h2 id="loop-footer">Stay in the loop</h2>
+        <p id="sign-up-footer">Sign up and be the first to hear about new products and promotions!</p>
+        <div id="sign-up-now-footer">SIGN UP NOW</div>
+      </div>
+      <div class="footer-right">
+        <div class="shop-now">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
+            id="shop-now-image">
+        </div>
+        <div class="customer-service">
+          <div id="faq">
+            <h3>SHOP BROOKSTONE.COM</h3>
+            <p>Massage Chair Buyers Guide</p>
+            <p>FAQ</p>
+            <p>About Us</p>
+            <p>Shopping Info</p>
+            <p>Privacy Policy</p>
+            <p>Prop 65</p>
+            <p>Accessibility Statement</p>
+          </div>
+          <div id="contact-footer">
+            <h3>CUSTOMER SERVICE</h3>
+            <p>Contact Us</p>
+            <p>Return Policy</p>
+            <p>Order Tracking</p>
+            <p>Product Manuals</p>
+            <p>Your California Privacy Rights</p>
+            <p>Accessibility Mode</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
 
 
@@ -157,58 +256,90 @@
 
 
 <script>
-    let form=document.querySelector("#form");
-    const singup=()=>{
-        event.preventDefault
-        let payload={
-        firstname:document.querySelector("#firstName").value,
-        lastname:document.querySelector("#lastName").value,
-        email:document.querySelector("#email").value,
-        pass:document.querySelector("#pass").value,
+  let form = document.querySelector("#form");
+  const singup = () => {
+    event.preventDefault
+    let payload = {
+      firstname: document.querySelector("#firstName").value,
+      lastname: document.querySelector("#lastName").value,
+      email: document.querySelector("#email").value,
+      pass: document.querySelector("#pass").value,
     }
-  
+
 
     // console.log(payload)
-    fetch("http://localhost:4600/users/register",{
-        
-        method:"POST",
-        headers:{
-            "Content-type":"application/json"
-        },
-        
-        body :JSON.stringify(payload)
-    }).then(res=>res.json())
-    .then(res=>
-        console.log(res)
-        
-    )
-    .catch(err=>console.log(err.message))
-    
-    }
+    fetch("https://creepy-yak-frock.cyclic.app/users/register", {
 
-    const login=()=>{
-        let logindata={
-            email:document.querySelector("#email-login").value,
-            pass:document.querySelector("#pass-login").value,
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+
+      body: JSON.stringify(payload)
+    }).then(res => res.json())
+      .then(res =>
+        console.log(res)
+
+      )
+      .catch(err => console.log(err.message))
+
+  }
+
+  const login = () => {
+    let logindata = {
+      email: document.querySelector("#email-login").value,
+      pass: document.querySelector("#pass-login").value,
     }
     console.log(logindata)
-    fetch("http://localhost:4600/users/login",{
-        
-        method:"POST",
-        headers:{
-            "Content-type":"application/json"
+    if (logindata.email === "admin@gmail.com" && logindata.pass === "admin") {
+      alert("Redirecting to admin page")
+      window.location.href = "admin.html"
+    } else {
+      fetch("https://creepy-yak-frock.cyclic.app/users/login", {
+
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
         },
-        
-        body :JSON.stringify(logindata)
-    }).then(res=>res.json())
-    .then(res=>{
-        console.log(res)
-        localStorage.setItem("token",res.token)
-    })
-    .catch(err=>console.log(err))
+
+        body: JSON.stringify(logindata)
+      }).then(res => res.json())
+        .then(res => {
+          console.log(res)
+          if (res.token) {
+            localStorage.setItem("token", res.token)
+            alert("login succesful")
+            window.location.href = ("../index.html")
+          } else {
+            alert("Wrong credaintail")
+          }
+        })
+        .catch(err => console.log(err))
+    }
+  }
+  let logo = document.querySelector("#logo-image");
+  logo.addEventListener("click", () => {
+    window.location.href = "/frontend/index.html"
+  })
+
+  let product = document.querySelector("#new-product-page")
+  product.addEventListener("click", () => {
+    window.location.href = "./product.html"
+  })
+  let userslogo = document.querySelector("#user-icon")
+  userslogo.addEventListener("click", () => {
+    window.location.href = "./register.html"
+  })
+  let cartlogo = document.querySelector("#cart-icon")
+  cartlogo.addEventListener("click", () => {
+    let tokendata = localStorage.getItem("token")
+    if (tokendata) {
+      window.location.href = "./cart.html"
+    } else {
+      alert("Please Login First!")
     }
 
-
+  })
 
 
 

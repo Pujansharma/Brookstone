@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="../style/nav.css">
+  <link rel="stylesheet" href="../style/fotter.css">
+</head>
+
+<body>
+  <style>
+    /* Add general styles */
+    /* *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }  */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      /* Add the header styles, such as the background color and padding */
+    }
+
+    footer {
+      margin-top: 70px;
+    }
+
+    #logo-image {
+      cursor: pointer;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .cart {
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .cart h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      background-color: #007aff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #0055ff;
+    }
+
+    #img {
+      width: 30%;
+    }
+
+    .decrease-quantity,
+    .increase-quantity {
+      width: 20px;
+      height: 20px;
+    }
+
+    .remove-item {
+      /* border: none; */
+      border-color: black;
+      width: 100px;
+      height: 50px;
+    }
+
+    #main_item_container {
+      padding-top: 120px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .drop-downs {
+        visibility: hidden;
+      }
+
+      #main_item_container {
+        padding-top: 120px;
+      }
+    }
+  </style>
+  <header>
+    <!-- Add the header content, such as the logo and search bar -->
+    <nav class="navbar">
+
+      <div class="nav-searchbar">
+        <div id="logo">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+            id="logo-image">
+        </div>
+        <div class="search">
+          <input type="text" id="search-input" placeholder="Search">
+
+        </div>
+        <div class="icon-search">
+          <!-- <img src="" > -->
+          <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
+        </div>
+        <div class="cart-login">
+
+          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+            id="user-icon">
+          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+            id="favorite-icon">
+          <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256" id="cart-icon">
+        </div>
+      </div>
+
+      <div class="drop-downs">
+        <p id="new-product-page">New</p>
+        <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+        <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+        <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+        <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
+        <!-- <p>Home</p> -->
+        <p>Wine & Bar</p>
+        <p>Outdoor</p>
+        <p>Technology</p>
+        <p>Travel</p>
+        <p>Accessories</p>
+        <p>Entertainment</p>
+        <p>Gifts</p>
+        <p>Sale</p>
+      </div>
+    </nav>
+
+    <!-- *****************************************DROP-DOWNS-CONTAINERS************************************************* -->
+    <!-- ///////////Massage//////////////// -->
+
+    <div class="massage-dropdown hidden">
+      <div class="list1">
+        <div id="massage-chairs">
+          <p>Massage Chairs</p>
+          <p>Eye</p>
+          <p>Foot & Leg</p>
+        </div>
+        <div id="massage-guns">
+          <p>Massage Guns</p>
+          <p>Hand</p>
+          <p>Intimate</p>
+        </div>
+        <div id="neck-back">
+          <p>Neck & Back</p>
+          <p>Rollers</p>
+          <p>Seat Topper</p>
+        </div>
+        <div id="best-sellers">
+          <p>Best Sellers</p>
+          <p>Viel All</p>
+        </div>
+      </div>
+      <div class="list2">
+        <div id="massagechair-image-div">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/massage_01.webp?v=1657749435"
+            id="massage-img">
+          <p>Massage Chair Guide</p>
+        </div>
+        <div id="foot-image-div">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/rei-thumb_1.jpg?v=1661531383"
+            id="foot-image">
+          <p>Foot & Leg Massage</p>
+        </div>
+      </div>
+    </div>
+
+
+  </header>
+  <main id="main_item_container">
+    <section class="cart">
+      <h1>Your Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add the table rows for each item in the cart -->
+        </tbody>
+      </table>
+      <div class="cart-total">
+        <p>Total:</p>
+        <span>$0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </section>
+  </main>
+  <footer>
+    <!-- Add the footer content, such as the navigation links -->
+    <div class="footer">
+      <div class="stay-loop">
+        <h2 id="loop-footer">Stay in the loop</h2>
+        <p id="sign-up-footer">Sign up and be the first to hear about new products and promotions!</p>
+        <div id="sign-up-now-footer">SIGN UP NOW</div>
+      </div>
+      <div class="footer-right">
+        <div class="shop-now">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
+            id="shop-now-image">
+        </div>
+        <div class="customer-service">
+          <div id="faq">
+            <h3>SHOP BROOKSTONE.COM</h3>
+            <p>Massage Chair Buyers Guide</p>
+            <p>FAQ</p>
+            <p>About Us</p>
+            <p>Shopping Info</p>
+            <p>Privacy Policy</p>
+            <p>Prop 65</p>
+            <p>Accessibility Statement</p>
+          </div>
+          <div id="contact-footer">
+            <h3>CUSTOMER SERVICE</h3>
+            <p>Contact Us</p>
+            <p>Return Policy</p>
+            <p>Order Tracking</p>
+            <p>Product Manuals</p>
+            <p>Your California Privacy Rights</p>
+            <p>Accessibility Mode</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+<script>
+  let logo = document.querySelector("#logo-image");
+  logo.addEventListener("click", () => {
+    window.location.href = "../index.html"
+  })
+
+  let product = document.querySelector("#new-product-page")
+  product.addEventListener("click", () => {
+    window.location.href = "./product.html"
+  })
+  let userslogo = document.querySelector("#user-icon")
+  userslogo.addEventListener("click", () => {
+    window.location.href = "./register.html"
+  })
+  let cartlogo = document.querySelector("#cart-icon")
+  cartlogo.addEventListener("click", () => {
+    let tokendata = localStorage.getItem("token")
+    if (tokendata) {
+      window.location.href = "./cart.html"
+    } else {
+      alert("Please Login First!")
+    }
+
+  })
+
+
+
+  let cartItems = JSON.parse(localStorage.getItem("Favourites")) || [];
+  console.log(cartItems)
+  const tableBody = document.querySelector('tbody');
+  let quantity = 1
+  cartItems.forEach(item => {
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+		<td>
+			<img id="img" src="${item.image}" alt="${item.name}">
+			${item.name}
+		</td>
+		<td>$${item.price}</td>
+<td>
+  
+<button class="decrease-quantity" data-name="${item.name}">-</button>
+<span class="quantity">${quantity}</span>
+<button class="increase-quantity" data-name="${item.name}">+</button>
+</td>
+<td>$${(item.price * quantity)}</td>
+<td>
+<button class="remove-item" data-name="${item.name}">Remove</button>
+</td>
+`;
+    tableBody.appendChild(row);
+  });
+
+  const decreaseButtons = document.querySelectorAll('.decrease-quantity');
+  const increaseButtons = document.querySelectorAll('.increase-quantity');
+  const removeButtons = document.querySelectorAll('.remove-item');
+
+  function decreaseQuantity(event) {
+    const button = event.target;
+    const itemName = button.dataset.name;
+    const itemRow = button.parentNode.parentNode;
+    const itemQuantity = itemRow.querySelector('.quantity');
+    const itemPrice = itemRow.querySelector('td:nth-child(2)');
+    const itemTotal = itemRow.querySelector('td:nth-child(4)');
+    let quantity = parseInt(itemQuantity.textContent);
+    if (quantity > 1) {
+      quantity--;
+      itemQuantity.textContent = quantity;
+      itemTotal.textContent = (quantity * parseFloat(itemPrice.textContent.substring(1))).toFixed(2);
+      updateCartTotal();
+    }
+  }
+
+  function increaseQuantity(event) {
+    const button = event.target;
+    const itemName = button.dataset.name;
+    const itemRow = button.parentNode.parentNode;
+    const itemQuantity = itemRow.querySelector('.quantity');
+    const itemPrice = itemRow.querySelector('td:nth-child(2)');
+    const itemTotal = itemRow.querySelector('td:nth-child(4)');
+    let quantity = parseInt(itemQuantity.textContent);
+    quantity++;
+    itemQuantity.textContent = quantity;
+    itemTotal.textContent = (quantity * parseFloat(itemPrice.textContent.substring(1))).toFixed(2);
+    updateCartTotal();
+  }
+
+  function removeItem(event) {
+    const button = event.target;
+    const itemName = button.dataset.name;
+    const itemRow = button.parentNode.parentNode;
+    itemRow.remove();
+    updateCartTotal();
+  }
+
+  function updateCartTotal() {
+    const cartRows = document.querySelectorAll('tbody tr');
+    let total = 0;
+    cartRows.forEach(row => {
+      const priceElement = row.querySelector('td:nth-child(2)');
+      const quantityElement = row.querySelector('.quantity');
+      const price = parseFloat(priceElement.textContent.substring(1));
+      const quantity = parseInt(quantity.textContent);
+      total += price * 1
+      console.log(price)
+    });
+
+    const totalElement = document.querySelector('#cart-total');
+    totalElement.textContent = total.toFixed(2);
+  }
+
+  decreaseButtons.forEach(button => {
+    button.addEventListener('click', decreaseQuantity);
+  });
+
+  increaseButtons.forEach(button => {
+    button.addEventListener('click', increaseQuantity);
+  });
+
+  removeButtons.forEach(button => {
+    button.addEventListener('click', removeItem);
+  });
+
+  updateCartTotal();
+
+</script>
+
+</html>

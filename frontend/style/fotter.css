@@ -1,0 +1,73 @@
+.footer {
+    width: 90%;
+    display: flex;
+    background-color: #50514f;
+    color: white;
+    padding: 5%;
+    padding-top: 10%;
+    z-index: -1;
+}
+
+.customer-service {
+    display: flex;
+}
+
+#shop-now-image {
+    width: 70%;
+    margin-left: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#sign-up-now-footer {
+    height: 5vh;
+    width: 90%;
+    background-color: #65c297;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+}
+
+#contact-footer {
+    margin-left: 20%;
+    padding-top: 5%;
+}
+
+#faq {
+    margin-left: 25%;
+    padding-top: 5%;
+}@media screen and (max-width: 768px) {
+.footer {
+flex-direction: column;
+padding: 3%;
+padding-top: 6%;
+margin-left: 15px;
+}
+
+#shop-now-image {
+width: 90%;
+margin-left: 5%;
+margin-bottom: 20px;
+}
+
+#sign-up-now-footer {
+height: 7vh;
+font-size: 12px;
+padding-top: 3%;
+}
+
+#contact-footer {
+margin-left: 5%;
+margin-bottom: 20px;
+}
+
+#faq {
+margin-left: 5%;
+margin-bottom: 20px;
+}.shop-now{
+padding-top: 15px;
+padding-right: 62px;
+}
+}

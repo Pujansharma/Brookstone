@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-Page</title>
+    <link rel="stylesheet" href="./style/fotter.css">
     <link rel="stylesheet" href="./style/index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style/nav.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
-    
-   
+
+
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                 <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
             </div>
             <div class="cart-login">
-                
+
                 <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
                     id="user-icon">
                 <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
@@ -394,46 +395,104 @@
             src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/DT_Banner_1f221451-d6eb-474e-bdd7-c741539a4a70_1600x.jpg?v=1659733245">
     </div>
 
+
+    <footer>
+        <div class="footer">
+            <div class="stay-loop">
+                <h2 id="loop-footer">Stay in the loop</h2>
+                <p id="sign-up-footer">Sign up and be the first to hear about new products and promotions!</p>
+                <div id="sign-up-now-footer">SIGN UP NOW</div>
+            </div>
+            <div class="footer-right">
+                <div class="shop-now">
+                    <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
+                        id="shop-now-image">
+                </div>
+                <div class="customer-service">
+                    <div id="faq">
+                        <h3>SHOP BROOKSTONE.COM</h3>
+                        <p>Massage Chair Buyers Guide</p>
+                        <p>FAQ</p>
+                        <p>About Us</p>
+                        <p>Shopping Info</p>
+                        <p>Privacy Policy</p>
+                        <p>Prop 65</p>
+                        <p>Accessibility Statement</p>
+                    </div>
+                    <div id="contact-footer">
+                        <h3>CUSTOMER SERVICE</h3>
+                        <p>Contact Us</p>
+                        <p>Return Policy</p>
+                        <p>Order Tracking</p>
+                        <p>Product Manuals</p>
+                        <p>Your California Privacy Rights</p>
+                        <p>Accessibility Mode</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 <script>
+    let logo = document.querySelector("#logo-image");
+  logo.addEventListener("click", () => {
+    window.location.href = "index.html"
+  })
     $('#slick1').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1
-});
+        rows: 1,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
     $('#featureSlide').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 3
-});
+        rows: 1,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    });
 
 
-$('.best-sellers-slider').slick({
-    rows: 1,
-    dots: false,
-    arrows: false,
-    autoplay:true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 5,
-    slidesToScroll: 3
-});
-let product=document.querySelector("#new-product-page")
-product.addEventListener("click",()=>{
-    window.location.href="html/admin.html"
-})
+    $('.best-sellers-slider').slick({
+        rows: 1,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 5,
+        slidesToScroll: 3
+    });
+    let product = document.querySelector("#new-product-page")
+    product.addEventListener("click", () => {
+        window.location.href = "html/product.html"
+    })
+    let userslogo = document.querySelector("#user-icon")
+    userslogo.addEventListener("click", () => {
+        window.location.href = "html/register.html"
+    })
+    let cartlogo = document.querySelector("#cart-icon")
+    cartlogo.addEventListener("click", () => {
+        let tokendata = localStorage.getItem("token")
+        if (tokendata) {
+            window.location.href = "html/cart.html"
+        }else{
+            window.location.href = "html/register.html"
+        }
+        
+    })
+
 </script>
 <script src="nav.js"></script>
+
 </html>

@@ -4,15 +4,14 @@ const {dataModel}=require("../user.model.js/data.model")
 
 dataRouter.post("/add", async (req, res) => {
     try {
-        const data=await dataModel.insertMany(req.body);
-        // await data.save();
-
+        const data=new dataModel(req.body);
+        await data.save();
         console.log(req.body)
         res.status(200).send({ "msg": "A new Note has been added" })
 
     } catch (err) {
         res.status(400).send({ "msg": err.message })
-    }
+    }9
 })
 dataRouter.get("/get", async(req,res)=>{
     let query=req.query;
@@ -24,26 +23,16 @@ dataRouter.get("/get", async(req,res)=>{
     }
 })
 
-
-// const items = ['apple', 'banana', 'orange', 'grape', 'mango'];
-
-dataRouter.get('/search/:key', async(req, res) => {
-    // console.log(req.params.key)
-//   const query = req.params.query
-//   let name=(req.query.name)
-//   if(name){
-    let filteredItems = await dataModel.find({
-        "$or":[
-            {"name":{$regex:req.params.key}}
-        ]
-    });
-        
-// 
-  
-  res.json(filteredItems);
-res.send(filteredItems)
-});
-
+dataRouter.get("/", async(req,res)=>{
+    const name=req.query.name;
+    if(name){
+        let data=await dataModel.find ({"name":{$regex:name,$options:'i'}});
+        res.send(data);
+    }else{
+        let data= await dataModel.find();
+        res.send(data)
+    }
+})
 
 
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+    .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.image-container:hover:before {
+  opacity: 1;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-container:hover img {
+  opacity: 0;
+}
+
+.image-container:before {
+  background-image: url("https://cdn.shopify.com/s/files/1/0262/2226/4423/files/lelo_1600x.png?v=1670240370");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+</style>
+<body>
+    <div class="image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/download_copy_1600x.jpg?v=1653328148" alt="Original Image">
+        
+      </div>
+</body>
+</html>
