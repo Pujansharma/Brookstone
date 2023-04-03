@@ -265,6 +265,8 @@
       email: document.querySelector("#email").value,
       pass: document.querySelector("#pass").value,
     }
+    console.log()
+    let usremail=localStorage.setItem("userdata",payload.email)
 
 
     // console.log(payload)
@@ -277,9 +279,11 @@
 
       body: JSON.stringify(payload)
     }).then(res => res.json())
-      .then(res =>
+      .then(res =>{
         console.log(res)
-
+        alert(res.msg)
+       localStorage.setItem("username",payload.firstname)
+    }
       )
       .catch(err => console.log(err.message))
 

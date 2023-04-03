@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/fotter.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/nav.css">
@@ -17,14 +18,15 @@
       #restaurant-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  gap: 15px;
   padding-top: 100px;
+  margin-left: 95px;
   
 }
 
 /* Style the product items */
 .prodocutimg {
-  width: 40%;
+  width: 70%;
   height: 200px;
   object-fit: cover;
 }
@@ -68,6 +70,13 @@ button:hover {
 #restaurant-container > div[data-category="ethnic"],
 #restaurant-container > div[data-category="fast_food"] {
   display: block;
+}.prodocutimg{
+  padding-top: 30px;
+  padding-left: 40px;
+}.name,.price{
+  text-align: center;
+}.add{
+  margin: auto;
 }
     </style>
   </head>
@@ -262,6 +271,43 @@ button:hover {
   <!-- Here Append All the Products  -->
   
 </div>
+<footer>
+  <div class="footer">
+    <div class="stay-loop">
+      <h2 id="loop-footer">Stay in the loop</h2>
+      <p id="sign-up-footer">Sign up and be the first to hear about new products and promotions!</p>
+      <div id="sign-up-now-footer">SIGN UP NOW</div>
+    </div>
+    <div class="footer-right">
+      <div class="shop-now">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
+          id="shop-now-image">
+      </div>
+      <div class="customer-service">
+        <div id="faq">
+          <h3>SHOP BROOKSTONE.COM</h3>
+          <p>Massage Chair Buyers Guide</p>
+          <p>FAQ</p>
+          <p>About Us</p>
+          <p>Shopping Info</p>
+          <p>Privacy Policy</p>
+          <p>Prop 65</p>
+          <p>Accessibility Statement</p>
+        </div>
+        <div id="contact-footer">
+          <h3>CUSTOMER SERVICE</h3>
+          <p>Contact Us</p>
+          <p>Return Policy</p>
+          <p>Order Tracking</p>
+          <p>Product Manuals</p>
+          <p>Your California Privacy Rights</p>
+          <p>Accessibility Mode</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 <script>
 let bag=[];
@@ -305,15 +351,18 @@ function displayfun(data){
 
     let name=document.createElement("h2");
     name.textContent=el.name;
+    name.classList.add("name");
 
     let price=document.createElement("p");
     price.textContent=el.price;
+    price.classList.add("price");
 
     btn=document.createElement("button");
-    btn.textContent="Favourites"
-
+    btn.textContent="Add to Wishlist"
+    btn.classList.add("add");
     btn.addEventListener("click",function(){
       let cartItem=JSON.parse(localStorage.getItem("Favourites"));
+      alert("Added to cart")
     if(cartItem==null){
       cartItem=[];
     } 

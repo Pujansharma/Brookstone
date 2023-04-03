@@ -25,6 +25,7 @@
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 50px;
+  margin-left: 250px;
 }
 
 #restaurant-container {
@@ -92,6 +93,10 @@
 .modal-header {
   background-color: #f8f9fa;
   border-bottom: none;
+}#logout{
+  margin-left: 45px;
+  width: 70px;
+  font-size: 20px;
 }
 
 .modal-title {
@@ -106,28 +111,48 @@
 .modal-footer {
   background-color: #f8f9fa;
   border-top: none;
-}
-
-/* Media queries for mobile devices */
-@media only screen and (max-width: 600px) {
+}/* Styles for screens wider than 768px */
+/* @media only screen and (min-width: 768px) {
   #main_container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f8f9fa;
   }
 
   #users {
-    font-size: 24px;
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: 490px;
   }
 
   #restaurant-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
 
   #restaurant-container > div {
-    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  #restaurant-container > div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
 
   #restaurant-container > div h2 {
@@ -146,13 +171,57 @@ font-size: 20px;
 padding: 8px 16px;
 }
 
-.modal-dialog {
-max-width: 100%;
-}
+  .modal-dialog {
+    max-width: 500px;
+  }
 
-.modal-body {
-padding: 20px;
-}
+  .modal-content {
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .modal-body {
+    padding: 30px;
+  }
+
+  .modal-footer {
+    background-color: #f8f9fa;
+    border-top: none;
+  }
+} */
+
+/* Styles for screens 768px and below */
+@media only screen and (max-width: 768px) {
+  #main_container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f8f9fa;
+  }
+
+  #users {
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+
+  #restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1
+  }
 }
 
     </style>
@@ -160,7 +229,7 @@ padding: 20px;
 <body>
   <div id="users">
     <h1>    Users Detailes
-      <!-- <span ><input id="logout" type="button" value="log out"></span> -->
+      <span id="logout" ><button id="logout">logout</button></span>
     </h1>
     
   </div>
@@ -203,7 +272,8 @@ padding: 20px;
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" id="btn" class="btn btn-primary">Send message</button>
+              <button type="button" id="btn" class="btn btn-primary">Add product</button>
+
               
             </div>
             <!-- <span><button>hy</button></span> -->
@@ -214,6 +284,10 @@ padding: 20px;
     </div>
 </body>
 <script>
+  let btn=document.querySelector("#logout")
+  btn.addEventListener("click",()=>{
+    window.location.href="/frontend/index.html"
+  })
     let bag=[];
     const url = `https://creepy-yak-frock.cyclic.app/users/get`;
     // All your JS code for Home Page goes here

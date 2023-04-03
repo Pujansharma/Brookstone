@@ -222,7 +222,7 @@
       </table>
       <div class="cart-total">
         <p>Total:</p>
-        <span>$0.00</span>
+        <span id="grandtotal">$0.00</span>
       </div>
       <button class="checkout-btn">Checkout</button>
     </section>
@@ -268,9 +268,14 @@
   <script src="script.js"></script>
 </body>
 <script>
+  // checkout-btn
   let logo = document.querySelector("#logo-image");
   logo.addEventListener("click", () => {
     window.location.href = "../index.html"
+  })
+  let checkout = document.querySelector(".checkout-btn");
+  checkout.addEventListener("click", () => {
+    window.location.href = "payment.html"
   })
 
   let product = document.querySelector("#new-product-page")
@@ -288,6 +293,7 @@
       window.location.href = "./cart.html"
     } else {
       alert("Please Login First!")
+      window.location.href = "./register.html"
     }
 
   })
@@ -354,7 +360,10 @@
     itemQuantity.textContent = quantity;
     itemTotal.textContent = (quantity * parseFloat(itemPrice.textContent.substring(1))).toFixed(2);
     updateCartTotal();
+    // console.log(quantity)
+    console.log(itemQuantity.value)
   }
+
 
   function removeItem(event) {
     const button = event.target;
@@ -371,13 +380,21 @@
       const priceElement = row.querySelector('td:nth-child(2)');
       const quantityElement = row.querySelector('.quantity');
       const price = parseFloat(priceElement.textContent.substring(1));
-      const quantity = parseInt(quantity.textContent);
-      total += price * 1
-      console.log(price)
+      const quantity = parseInt(quantityElement.textContent);
+      // let qty=document.querySelector(".quantity").value
+      // let nu=Number(qty)
+      // console.log(quantity)
+      total += price *quantity
+      
     });
-
-    const totalElement = document.querySelector('#cart-total');
-    totalElement.textContent = total.toFixed(2);
+    console.log(total)
+    // const totalElement = document.querySelector('#cart-total');
+    // totalElement.textContent = total.toFixed(2);
+    let grandtotal=document.querySelector("#grandtotal");
+    grandtotal.textContent=`$ ${+total.toFixed(3)}`;
+    let totaldat=+total.toFixed(3)
+    // console.log(totaldat)
+    localStorage.setItem("grandtotal",totaldat)
   }
 
   decreaseButtons.forEach(button => {

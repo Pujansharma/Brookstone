@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        #left-page {
+            margin-left: 10%;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #img img {
+            width: 50vh;
+        }
+
+        #info {
+            display: flex;
+            margin-top: 5%;
+            gap: 10px;
+        }
+
+        #info a {
+            text-decoration: none;
+            color: #65c297;
+        }
+
+        #info2 {
+            border: 1px solid;
+            border: 1px solid#d7d4d4;
+            height: 200px;
+            margin-top: 30px;
+        }
+
+        #info2 hr {
+            border: 1px solid#eaeaea;
+        }
+
+        #info2 div {
+            display: flex;
+            margin-top: 3%;
+            justify-content: space-between;
+            font-size: 14px;
+            align-items: center;
+        }
+
+        #info2 div a {
+            text-decoration: none;
+            color: #65c297;
+        }
+
+        form input {
+            margin-top: 15px;
+        }
+
+        #form1 input {
+            width: 500px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid#adacac;
+        }
+
+        #form2 input {
+            width: 244px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid#adacac;
+
+        }
+
+        #form1 img {
+            width: 100px;
+            height: 30px;
+            margin: 15px 0px 0px 10px;
+        }
+
+        #form p {
+            margin: 20px 0px 0px 10px;
+        }
+
+        #botm {
+            margin-top: 20px;
+        }
+
+        #botm button {
+            margin-left: 30%;
+            width: 200px;
+            height: 50px;
+            background: #65c297;
+            border-radius: 10px;
+            color: #fff;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #botm button:hover {
+            background: #1bc877;
+        }
+
+        #botm a {
+            text-decoration: none;
+            color: #65c297;
+        }
+
+        #right-page {
+            background: hsl(0, 5%, 88%);
+            width: 50%;
+            height: auto;
+            /* text-align: center; */
+        }
+
+        #right-page div {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        #right-page div input {
+            width: 250px;
+            height: 35px;
+            margin-left: 10%;
+            border-radius: 5px;
+            border: 1px solid#adacac;
+        }
+
+        #right-page div button {
+            width: 80px;
+            border-radius: 5px;
+            background: #c4c1c1;
+            border: none;
+            margin-right: 18%;
+            cursor: pointer;
+        }
+
+        #right-page div p {
+            margin-right: 10%;
+        }
+
+        #right-page #bot2 {
+            margin-left: 20%;
+            font-size: small;
+            border: 1px solid#d2d0d0;
+            width: 400px;
+            text-align: center;
+            height: 25px;
+            background: #fff;
+            border-radius: 5px;
+
+        }
+
+        #right-page #bot2 a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="left-page">
+            <div id="img">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/Brookstone_logo.webp?54754">
+            </div>
+            <div id="info">
+                <a href="#"><span>Cart</span></a>
+                <span>></span>
+                <span>information</span>
+                <span>></span>
+                <a href="#"><span>Shipping</span></a>
+                <span>></span>
+                <a href="#"><span>Payment</span></a>
+            </div>
+            <div id="info2">
+                <div>
+                    <p><span>Contact</span></p>
+                    <p><span id="usernames"></span></p>
+                    <a href="">Change</a>
+                </div>
+                <hr>
+                <div>
+                    <p><span>Ship to</span></p>
+                    <p><span id="useradd"></span></p>
+                    <a href="">Change</a>
+                </div>
+                <hr>
+                <div>
+                    <p><span>Method</span></p>
+                    <p><span>First Class Package International · $27.79</span></p>
+                    <a href="">Change</a>
+                </div>
+            </div>
+            <div id="form">
+                <h2>Payment</h2>
+                <p>All transactions are secure and encrypted</p>
+                <form>
+                    <div id="form1">
+                        <input type="Number" placeholder="Card number"><br>
+                        <input type="text" placeholder="Name on card"><br>
+                    </div>
+                    <div id="form2">
+                        <input type="text" placeholder="Expiration date(MM/YY)">
+                        <input type="text" placeholder="Security code">
+                    </div>
+                    <div id="form1">
+
+                        <img src="https://cdn.shopify.com/shopifycloud/shopify/assets/checkout/offsite-gateway-logos/paypal@2x-768388b0667bef1aa9a7cf02fa1cc2184c2915a90d4cdd62dde223f74f2acbfc.png"
+                            alt="">
+                        <hr>
+                        <img src="https://cdn.shopify.com/shopifycloud/shopify/assets/checkout/offsite-gateway-logos/amazonpay@2x-6ed2b0ce5c20dfd0dc87f9363f0a57ecf9bb4e4fde26df79b3da96e6480cebd4.png"
+                            alt="">
+                        <hr>
+                        <p>Klarna - Flexible payments</p>
+                    </div>
+                </form>
+            </div>
+            <div id="botm">
+                <button id="paynow">Pay now</button>
+            </div>
+        </div>
+        <div id="right-page">
+            <div>
+                <p>Brookstone air PRO</p>
+                <h5 id="total">$</h5>
+            </div>
+            <hr>
+            <div>
+                <input type="text" placeholder="Gift card or discouht code">
+                <button>Apply</button>
+            </div>
+            <hr>
+            <div>
+                <p>Subtotal</p>
+                <p id="subtotal">$</p>
+            </div>
+            <div>
+                <p>Shipping</p>
+                <p>$99.79</p>
+            </div>
+            <hr>
+            <div>
+                <p>Total</p>
+                <h1 id="subdata">usd</h1>
+            </div>
+            <p id="bot2">4 interest-free payments of $44.44 with <span>Klarna.</span><a href="#">Learn More</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let subtotal=localStorage.getItem("grandtotal")
+
+    let mtotal=document.querySelector("#total");
+    mtotal.textContent=+subtotal
+
+
+    let total=document.querySelector("#subtotal");
+    total.textContent=+subtotal
+    let data=+subtotal+99.79
+    console.log(data)
+    // total
+    let sutotal=document.querySelector("#subdata");
+    sutotal.textContent=data
+
+  let uname=localStorage.getItem("userdata")
+  let nammeOfUser=document.querySelector("#usernames")
+  console.log(uname)
+  nammeOfUser.innerHTML=uname
+
+  let useradd=localStorage.getItem("address");
+
+  let addressOfUser=document.querySelector("#useradd")
+  console.log(uname)
+  addressOfUser.innerHTML=useradd;
+
+  let paynow=document.querySelector("#paynow")
+  paynow.addEventListener("click",()=>{
+    window.location.href="order.html"
+  })
+</script>
