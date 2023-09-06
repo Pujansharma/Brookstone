@@ -1,0 +1,165 @@
+
+/* Reset default styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+#container {
+font-family: Arial, sans-serif;
+background-color: #f7f7f7;
+margin: 0;
+padding: 0;
+margin-left: 150px;
+/* align-items: center; */
+min-height: 100vh;
+padding-top: 100px;
+}
+
+#container {
+display: flex;
+width: 100%;
+max-width: 1200px;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#left-page, #right-page {
+flex: 1;
+padding: 20px;
+}
+
+#left-page {
+background-color: white;
+border-right: 1px solid #e0e0e0;
+}
+
+#right-page {
+background-color: #f9f9f9;
+}
+
+#img img {
+max-width: 100px;
+height: auto;
+margin-bottom: 20px;
+}
+
+#info {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+color: #666;
+}
+
+#info span {
+margin: 0 10px;
+}
+
+#info a {
+color: #007bff;
+text-decoration: none;
+}
+
+#info a:hover {
+text-decoration: underline;
+}
+
+#info2 {
+margin-bottom: 20px;
+}
+
+#usernames {
+font-weight: bold;
+color: #333;
+}
+
+#form h2 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+#form input {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+#form input[type="number"] {
+width: 50%;
+}
+
+#botm {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+}
+
+#botm a {
+color: #007bff;
+text-decoration: none;
+font-size: 14px;
+}
+
+#checkout {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+
+#checkout:hover {
+background-color: #0056b3;
+}
+
+#right-page div {
+margin-bottom: 10px;
+font-family: "Mier demi";
+}
+
+#right-page p {
+font-weight: bold;
+}
+
+#right-page hr {
+margin: 10px 0;
+border: none;
+border-top: 1px solid #e0e0e0;
+}
+
+#right-page input[type="text"],
+#right-page input[type="number"] {
+width: 70%;
+padding: 8px;
+margin-right: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+#right-page button {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 6px 12px;
+border-radius: 4px;
+cursor: pointer;
+}
+
+#right-page button:hover {
+background-color: #0056b3;
+}
+
+#subdata {
+font-size: 36px;
+margin-top: 10px;
+color: #007bff;
+}
+

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  font-family: "Nunito", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  padding-top: 100px;
+}
+.container__left {
+  max-width: 18%;
+  padding: 4% 1%;
+  margin-left: 1%;
+  border: transparent;
+  border-right: 1px solid red;
+  font-size: 18px;
+}
+.container__right {
+  width: 80%;
+  /* padding: 3%; */
+  padding-left: 2%;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background: #f7433d, #fd306b;
+}
+.hero {
+  width: 25%;
+}
+.hero__image {
+  width: 100%;
+  border-radius: 100%;
+}
+.container__left__profile {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start space-evenly;
+}
+.hero__information {
+  display: flex;
+  flex-direction: column;
+}
+.hero__information > h4,
+.hero__information > a {
+  margin: 5px;
+  text-decoration: none;
+}
+.hero__information > a > h6 {
+  margin: 0;
+}
+.container__left__icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+}
+.container__left__icon > img {
+  width: 25px;
+  height: 25px;
+}
+.container__left__icon > h4 > a {
+  text-decoration: none;
+  color: inherit;
+}
+.container__left__icon:hover {
+  color: #f7433d, #fd306b;
+}
+.container__right__image {
+  display: flex;
+  justify-content: center;
+  margin: 8%;
+}
+.right__image {
+  width: 10%;
+  border-radius: 100%;
+}
+.information__row {
+  display: flex;
+  padding-left: 0px;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  margin: 10px;
+  /* line-height: 10px; */
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.information__row input {
+  font-size: 11px;
+  font-weight: bold;
+}
+.container__right__information {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: bold;
+  width: 90%;
+  /* border: 1px solid red; */
+  margin: -5% auto;
+}
+.container__right__information label {
+  color: #f7433d, #fd306b;
+}
+.container__right__information input {
+  font-size: 11px;
+}
+.information__row input {
+  background: transparent;
+  border: none;
+  width: 350px;
+  font-size: 18px;
+  border-bottom: 1px solid;
+}
+
+.information__row input:focus {
+  outline: none;
+}
+
+a:active,
+a:hover {
+  color: rgb(253, 131, 171);
+  cursor: pointer;
+}
+
+a[tabindex="1"]:focus {
+  color: rgb(253, 131, 171);
+  outline: none;
+}.item {
+    visibility: hidden;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fd306b;
+    bottom: 65%;
+    right: 10%;
+    padding: 1%;
+    color: white;
+    border-radius: 100%;
+  }

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../style/payment.css">
+  
+
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="nav-searchbar">
+            <div id="logo">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+                    id="logo-image">
+            </div>
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Search">
+
+            </div>
+            <div class="icon-search">
+                <!-- <img src="" > -->
+                <!-- <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon"> -->
+            </div>
+            <div class="cart-login">
+
+                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+                    id="user-icon">
+                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+                    id="favorite-icon">
+                <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256"
+                    id="cart-icon">
+            </div>
+        </div>
+
+
+    </nav>
+
+
+    <div id="container">
+        <div id="left-page">
+            <div id="img">
+                <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/Brookstone_logo.webp?54754" alt="Brookstone Logo">
+            </div>
+            <div id="info">
+                <a href="./cart.html"><span>Cart</span></a>
+                <span>></span>
+                <span>Information</span>
+                <span>></span>
+                <a href="#"><span>Shipping</span></a>
+                <span>></span>
+                <a href="#"><span>Payment</span></a>
+            </div>
+            <div id="info2">
+                <h3>Contact Information</h3>
+                <span id="usernames"></span>
+            </div>
+            <div id="form">
+                <h2>Shipping Address</h2>
+                <form>
+                    <div id="form1">
+                        <input type="text" placeholder="Country/Region">
+                    </div>
+                    <div id="form2">
+                        <input type="text" placeholder="First Name" required autocomplete="off">
+                        <input type="text" placeholder="Last Name" required>
+                        <input type="text" placeholder="City" required>
+                        <input type="number" placeholder="Postal Code" required>
+                    </div>
+                    <div id="form1">
+                        <input type="text" id="add" placeholder="Address" required>
+                       
+                        <input type="number" id="phoneno" placeholder="Phone" required>
+                    </div>
+                </form>
+            </div>
+            <div id="botm">
+                <a href="./cart.html">< Return to Cart</a>
+                <button id="checkout">Continue to Shipping</button>
+            </div>
+        </div>
+        <div id="right-page">
+            <div>
+                <p>Brookstone Air PRO</p>
+                <!-- <h5 id="total"></h5> -->
+            </div>
+            <hr>
+            <div>
+                <input type="text" placeholder="Gift Card or Discount Code">
+                <button>Apply</button>
+            </div>
+            <hr>
+            <div>
+                
+                <span>Subtotal</span> &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp <span id="subtotal"></span>
+            </div>
+            <br>
+            <div>
+                <span>Shipping price</span> &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp <span>+ 99.79 $ </span>
+                <!-- <p></p> -->
+            </div>
+            <hr>
+            <div>
+                <span>Total</span>&nbsp  &nbsp  &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp
+                <strong id="total"></strong>
+                <!-- <h1 id="subdata">USD</h1> -->
+            </div>
+            <br>
+            <img style="width: 100%;" src="https://images.meesho.com/images/marketing/1588578650850.webp" alt="safe">
+            
+        </div>
+    </div>
+
+
+    <footer class="padding_4x" style="margin-top: 20px;">
+        <div class="flex">
+            <section class="flex-content padding_1x">
+                <h3>About</h3>
+                <a href="#" style="color: white;">Zoom Blog</a>
+                <a href="#" style="color: white;">Customers</a>
+                <a href="#" style="color: white;">Our Team</a>
+                <a href="#" style="color: white;">Careers</a>
+                <a href="#" style="color: white;" >Integrations</a>
+    
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Download</h3>
+                <a href="#" style="color: white;">Meetings Client</a>
+                <a href="#" style="color: white;">Zoom Rooms Client</a>
+                <a href="#" style="color: white;">Zoom Rooms Controller</a>
+                <a href="#" style="color: white;">Browser Extension</a>
+                <a href="#" style="color: white;">Outlook Plug-in</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Sales
+                </h3>
+                <a href="#" style="color: white;">1.888.799.9666</a>
+                <a href="#" style="color: white;">Contact Sales</a>
+                <a href="#" style="color: white;">Plans & Pricing</a>
+                <a href="#" style="color: white;">Request a Demo</a>
+                <a href="#" style="color: white;">Webinars and Events</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3>Support
+                </h3>
+                <a href="#" style="color: white;">Test Talkies</a>
+                <a href="#" style="color: white;">Account</a>
+                <a href="#" style="color: white;">Support Center</a>
+                <a href="#" style="color: white;">Learning Center</a>
+                <a href="#" style="color: white;">Feedback</a>
+                <a href="#" style="color: white;">Contact Us</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <h3 style="color: white;">Newsletter</h3>
+                <p style="color: white;">You can trust us. we only send promo offers,</p>
+                <fieldset class="fixed_flex">
+                    
+                    
+                </fieldset>
+            </section>
+            
+        </div>
+        <div class="flex">
+            <section class="flex-content padding_1x">
+                <p>Copyright ©2023 All rights reserved || Talkies - Let's connect</p>
+            </section>
+            <section class="flex-content padding_1x">
+                <a href="https://www.facebook.com/zoom"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/zoom"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/zoom/"><i class="fa fa-dribbble"></i></a>
+                <a href="https://www.linkedin.com/company/zoom-video-communications/"><i class="fa fa-linkedin"></i></a>
+            </section>
+        </div>
+    </footer>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+<script src="../script/payment.js"></script>
+
+</html>

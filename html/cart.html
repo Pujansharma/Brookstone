@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="../style/nav.css">
+  <link rel="stylesheet" href="../style/fotter.css">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/orders.css" />
+  <link rel="stylesheet" href="../style/card.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body onload="fetchValues()">
+  
+  <header>
+    <!-- Add the header content, such as the logo and search bar -->
+    <nav class="navbar">
+
+      <div class="nav-searchbar">
+        <div id="logo">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+            id="logo-image">
+        </div>
+        <div class="search">
+          <input type="text" id="search-input" placeholder="Search">
+
+        </div>
+        <div class="icon-search">
+          <!-- <img src="" > -->
+          <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
+        </div>
+        <div class="cart-login">
+
+          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+            id="user-icon">
+          <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+            id="favorite-icon">
+          <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256" id="cart-icon">
+        </div>
+      </div>
+
+      <div class="drop-downs">
+        <p id="new-product-page">New</p>
+        <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+        <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+        <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+        <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
+        <!-- <p>Home</p> -->
+        <p>Wine & Bar</p>
+        <p>Outdoor</p>
+        <p>Technology</p>
+        <p>Travel</p>
+        <p>Accessories</p>
+        <p>Entertainment</p>
+        <p>Gifts</p>
+        <p>Sale</p>
+      </div>
+    </nav>
+
+    <!-- *****************************************DROP-DOWNS-CONTAINERS************************************************* -->
+    <!-- ///////////Massage//////////////// -->
+
+    <div class="massage-dropdown hidden">
+      <div class="list1">
+        <div id="massage-chairs">
+          <p>Massage Chairs</p>
+          <p>Eye</p>
+          <p>Foot & Leg</p>
+        </div>
+        <div id="massage-guns">
+          <p>Massage Guns</p>
+          <p>Hand</p>
+          <p>Intimate</p>
+        </div>
+        <div id="neck-back">
+          <p>Neck & Back</p>
+          <p>Rollers</p>
+          <p>Seat Topper</p>
+        </div>
+        <div id="best-sellers">
+          <p>Best Sellers</p>
+          <p>Viel All</p>
+        </div>
+      </div>
+      <div class="list2">
+        <div id="massagechair-image-div">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/massage_01.webp?v=1657749435"
+            id="massage-img">
+          <p>Massage Chair Guide</p>
+        </div>
+        <div id="foot-image-div">
+          <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/rei-thumb_1.jpg?v=1661531383"
+            id="foot-image">
+          <p>Foot & Leg Massage</p>
+        </div>
+      </div>
+    </div>
+
+
+  </header>
+  <main id="main_item_container">
+    <section class="cart">
+      <h1>Your Cart</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add the table rows for each item in the cart -->
+        </tbody>
+      </table>
+      <div class="cart-total">
+        <p>Total:</p>
+        <span id="grandtotal">$0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </section>
+  </main>
+  
+ 
+    <div id="maincointerifbodyisblank" class="container">
+     
+      <div class="container__right">
+        <div class="orders__container">
+            <div class="container__right__image">
+            <div>
+                <img
+                src="https://www.meesho.com/mcheckout/build/static/media/empty-cart.b87f87595dfaa8606bfe.png"
+                alt="bowl Image"
+                class="right__image"
+              />
+            </div>
+         
+          <div class="button__container">
+         
+            <h2>Your cart is empty</h2>
+            <button style="cursor: pointer;" onclick="myfun()">View Products</button>
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      function fetchValues(){
+        if(JSON.parse(localStorage.getItem("qty"))> 0){
+      document.getElementById("item").style.visibility= "visible";
+    }
+        var user =JSON.parse(localStorage.getItem("user"));
+        document.getElementById("username").textContent= user.username;
+      }
+      function myfun(){
+        window.location.href="./product.html"
+      }
+    </script>
+ 
+ 
+
+  <footer class="padding_4x" style="margin-top: 20px;">
+    <div class="flex">
+        <section class="flex-content padding_1x">
+            <h3>About</h3>
+            <a href="#" style="color: white;">Zoom Blog</a>
+            <a href="#" style="color: white;">Customers</a>
+            <a href="#" style="color: white;">Our Team</a>
+            <a href="#" style="color: white;">Careers</a>
+            <a href="#" style="color: white;" >Integrations</a>
+
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Download</h3>
+            <a href="#" style="color: white;">Meetings Client</a>
+            <a href="#" style="color: white;">Zoom Rooms Client</a>
+            <a href="#" style="color: white;">Zoom Rooms Controller</a>
+            <a href="#" style="color: white;">Browser Extension</a>
+            <a href="#" style="color: white;">Outlook Plug-in</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Sales
+            </h3>
+            <a href="#" style="color: white;">1.888.799.9666</a>
+            <a href="#" style="color: white;">Contact Sales</a>
+            <a href="#" style="color: white;">Plans & Pricing</a>
+            <a href="#" style="color: white;">Request a Demo</a>
+            <a href="#" style="color: white;">Webinars and Events</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Support
+            </h3>
+            <a href="#" style="color: white;">Test Talkies</a>
+            <a href="#" style="color: white;">Account</a>
+            <a href="#" style="color: white;">Support Center</a>
+            <a href="#" style="color: white;">Learning Center</a>
+            <a href="#" style="color: white;">Feedback</a>
+            <a href="#" style="color: white;">Contact Us</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3 style="color: white;">Newsletter</h3>
+            <p style="color: white;">You can trust us. we only send promo offers,</p>
+            <fieldset class="fixed_flex">
+                
+                
+            </fieldset>
+        </section>
+        
+    </div>
+    <div class="flex">
+        <section class="flex-content padding_1x">
+            <p>Copyright ©2023 All rights reserved || Talkies - Let's connect</p>
+        </section>
+        <section class="flex-content padding_1x">
+            <a href="https://www.facebook.com/zoom"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/zoom"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/zoom/"><i class="fa fa-dribbble"></i></a>
+            <a href="https://www.linkedin.com/company/zoom-video-communications/"><i class="fa fa-linkedin"></i></a>
+        </section>
+    </div>
+</footer>
+
+  <script src="../script/card.js"></script>
+</body>
+<script>
+  let a=["123456"];
+  console.log(a)
+</script>
+
+</html>

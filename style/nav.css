@@ -155,6 +155,7 @@ text-decoration:underline
 .image-grid img{
   width: 100%;
 }
+
 .item1{
   grid-column-start: 1;
   grid-column-end: 3;

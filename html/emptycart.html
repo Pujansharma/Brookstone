@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart Item Count</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #cartContainer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  #cartLogo {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #itemCount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 50%;
+  }
+  input[type="file"] {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <div id="cartContainer">
+    <img id="cartLogo" src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256" alt="Cart Logo">
+    <span id="itemCount">0</span>
+  </div>
+  
+  <script>
+    const cartContainer = document.getElementById('cartContainer');
+    const cartLogo = document.getElementById('cartLogo');
+    const itemCountElement = document.getElementById('itemCount');
+    
+    let itemCount = 0; // Initialize item count
+    
+    cartContainer.addEventListener('click', () => {
+      // Simulate adding an item to the cart
+      itemCount++;
+      updateItemCount();
+    });
+    
+    function updateItemCount() {
+      itemCountElement.textContent = itemCount;
+      itemCountElement.style.display = itemCount > 0 ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

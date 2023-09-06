@@ -289,7 +289,7 @@ padding: 8px 16px;
     window.location.href="/frontend/index.html"
   })
     let bag=[];
-    const url = `https://creepy-yak-frock.cyclic.app/users/get`;
+    const url = `https://colorful-ant-pleat.cyclic.app/users/get`;
     // All your JS code for Home Page goes here
     fetch(url).then((res)=>res.json())
     .then((data)=>{
@@ -366,7 +366,7 @@ function Data(n,m,l){
       let newdat=new Data(image,name,price)
       console.log(newdat);
 
-      fetch("https://creepy-yak-frock.cyclic.app/data/add",{
+      fetch("https://colorful-ant-pleat.cyclic.app/data/add",{
         method:"POST",
         headers:{
           "content-type":"application/json"

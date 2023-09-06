@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign-In</title>
-  <link rel="stylesheet" href="../style/fotter.css">
+  <link rel="stylesheet" href="../style/index.css">
   <link rel="stylesheet" href="../style/nav.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
   * {
@@ -203,56 +204,70 @@
   </div>
   <!-- ***********************************FOOTER*************************************** -->
 
-  <footer>
-    <div class="footer">
-      <div class="stay-loop">
-        <h2 id="loop-footer">Stay in the loop</h2>
-        <p id="sign-up-footer">Sign up and be the first to hear about new products and promotions!</p>
-        <div id="sign-up-now-footer">SIGN UP NOW</div>
-      </div>
-      <div class="footer-right">
-        <div class="shop-now">
-          <img
-            src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/BKST_Klarna_Banner_Update_HP_Desktop_1600x.webp?v=1652916700"
-            id="shop-now-image">
-        </div>
-        <div class="customer-service">
-          <div id="faq">
-            <h3>SHOP BROOKSTONE.COM</h3>
-            <p>Massage Chair Buyers Guide</p>
-            <p>FAQ</p>
-            <p>About Us</p>
-            <p>Shopping Info</p>
-            <p>Privacy Policy</p>
-            <p>Prop 65</p>
-            <p>Accessibility Statement</p>
-          </div>
-          <div id="contact-footer">
-            <h3>CUSTOMER SERVICE</h3>
-            <p>Contact Us</p>
-            <p>Return Policy</p>
-            <p>Order Tracking</p>
-            <p>Product Manuals</p>
-            <p>Your California Privacy Rights</p>
-            <p>Accessibility Mode</p>
-          </div>
-        </div>
-      </div>
+  <footer class="padding_4x" style="margin-top: 20px;">
+    <div class="flex">
+      <section class="flex-content padding_1x">
+        <h3>About</h3>
+        <a href="#" style="color: white;">Zoom Blog</a>
+        <a href="#" style="color: white;">Customers</a>
+        <a href="#" style="color: white;">Our Team</a>
+        <a href="#" style="color: white;">Careers</a>
+        <a href="#" style="color: white;">Integrations</a>
+
+      </section>
+      <section class="flex-content padding_1x">
+        <h3>Download</h3>
+        <a href="#" style="color: white;">Meetings Client</a>
+        <a href="#" style="color: white;">Zoom Rooms Client</a>
+        <a href="#" style="color: white;">Zoom Rooms Controller</a>
+        <a href="#" style="color: white;">Browser Extension</a>
+        <a href="#" style="color: white;">Outlook Plug-in</a>
+      </section>
+      <section class="flex-content padding_1x">
+        <h3>Sales
+        </h3>
+        <a href="#" style="color: white;">1.888.799.9666</a>
+        <a href="#" style="color: white;">Contact Sales</a>
+        <a href="#" style="color: white;">Plans & Pricing</a>
+        <a href="#" style="color: white;">Request a Demo</a>
+        <a href="#" style="color: white;">Webinars and Events</a>
+      </section>
+      <section class="flex-content padding_1x">
+        <h3>Support
+        </h3>
+        <a href="#" style="color: white;">Test Talkies</a>
+        <a href="#" style="color: white;">Account</a>
+        <a href="#" style="color: white;">Support Center</a>
+        <a href="#" style="color: white;">Learning Center</a>
+        <a href="#" style="color: white;">Feedback</a>
+        <a href="#" style="color: white;">Contact Us</a>
+      </section>
+      <section class="flex-content padding_1x">
+        <h3 style="color: white;">Newsletter</h3>
+        <p style="color: white;">You can trust us. we only send promo offers,</p>
+        <fieldset class="fixed_flex">
+
+
+        </fieldset>
+      </section>
+
+    </div>
+    <div class="flex">
+      <section class="flex-content padding_1x">
+        <p>Copyright ©2023 All rights reserved || Talkies - Let's connect</p>
+      </section>
+      <section class="flex-content padding_1x">
+        <a href="https://www.facebook.com/zoom"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/zoom"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/zoom/"><i class="fa fa-dribbble"></i></a>
+        <a href="https://www.linkedin.com/company/zoom-video-communications/"><i class="fa fa-linkedin"></i></a>
+      </section>
     </div>
   </footer>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -266,11 +281,11 @@
       pass: document.querySelector("#pass").value,
     }
     console.log()
-    let usremail=localStorage.setItem("userdata",payload.email)
+    let usremail = localStorage.setItem("userdata", payload.email)
 
 
     // console.log(payload)
-    fetch("https://creepy-yak-frock.cyclic.app/users/register", {
+    fetch("https://colorful-ant-pleat.cyclic.app/users/register", {
 
       method: "POST",
       headers: {
@@ -279,11 +294,20 @@
 
       body: JSON.stringify(payload)
     }).then(res => res.json())
-      .then(res =>{
+      .then(res => {
         console.log(res)
-        alert(res.msg)
-       localStorage.setItem("username",payload.firstname)
-    }
+        // alert(res.msg)
+        Swal.fire(
+          'Register',
+          'Successful',
+          'success'
+        )
+        setTimeout(() => {
+          window.location.href = "#"
+        }, 3000);
+        localStorage.setItem("username", payload.firstname);
+        localStorage.setItem("email", payload.email)
+      }
       )
       .catch(err => console.log(err.message))
 
@@ -296,10 +320,18 @@
     }
     console.log(logindata)
     if (logindata.email === "admin@gmail.com" && logindata.pass === "admin") {
-      alert("Redirecting to admin page")
-      window.location.href = "admin.html"
+      // alert("Redirecting to admin page")
+      Swal.fire(
+        'Redirecting to admin page',
+        'Successful',
+        'success'
+      )
+      setTimeout(() => {
+        window.location.href = "admin.html"
+      }, 3000);
+
     } else {
-      fetch("https://creepy-yak-frock.cyclic.app/users/login", {
+      fetch("https://colorful-ant-pleat.cyclic.app/users/login", {
 
         method: "POST",
         headers: {
@@ -312,10 +344,35 @@
           console.log(res)
           if (res.token) {
             localStorage.setItem("token", res.token)
-            alert("login succesful")
-            window.location.href = ("../index.html")
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+
+            Toast.fire({
+              icon: 'success',
+              title: 'Signed in successfully'
+            })
+            setTimeout(() => {
+              window.location.href = ("../index.html")
+            }, 3000);
+
           } else {
-            alert("Wrong credaintail")
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            })
+            setTimeout(() => {
+              window.location.href = "#";
+            }, 3000);
           }
         })
         .catch(err => console.log(err))
@@ -323,7 +380,7 @@
   }
   let logo = document.querySelector("#logo-image");
   logo.addEventListener("click", () => {
-    window.location.href = "/frontend/index.html"
+    window.location.href = "../index.html"
   })
 
   let product = document.querySelector("#new-product-page")
@@ -340,7 +397,8 @@
     if (tokendata) {
       window.location.href = "./cart.html"
     } else {
-      alert("Please Login First!")
+      // alert("Please Login First!")
+      window.location.href = "#"
     }
 
   })

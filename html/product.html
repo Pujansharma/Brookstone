@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online shoping </title>
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/nav.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <style>
+    /* Custom styles */
+    body {
+      font-family: Arial, sans-serif;
+    }#search-icon{
+      cursor: pointer;
+    }.btn{
+      cursor: pointer;
+    }
+
+    .container {
+      /* padding: 20px; */
+    padding-top: 150px;
+    /* position: fixed; */
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product-card {
+      /* border: 1px solid #e2e2e2; */
+      border-radius: 5px;
+      /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+      margin: 30px;
+      padding: 15px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .product-image {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 5px 0;
+      height: 42px;
+      overflow: hidden;
+    }
+
+    .product-price {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .product-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .product-button {
+      flex: 1;
+      margin: 0 5px;
+    }.filter-container{
+      position: fixed;
+      /* margin-right: 50px; */
+    }.navbar{
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+
+    <div class="nav-searchbar">
+        <div id="logo">
+            <img src="https://cdn.shopify.com/s/files/1/0262/2226/4423/files/brookstone-logo1_1600x.png?v=1672581852"
+                id="logo-image">
+        </div>
+        <div class="search">
+            <input type="text" id="search-input" placeholder="Search">
+
+        </div>
+        <div class="icon-search">
+            <!-- <img src="" > -->
+            <img id="search-icon" src="https://cdn-icons-png.flaticon.com/512/482/482631.png" alt="searchicon">
+        </div>
+        <div class="cart-login">
+
+            <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/add-user-2513329-2104653.png?f=avif&w=256"
+                id="user-icon">
+            <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/love-1419433-1198271.png?f=avif&w=256"
+                id="favorite-icon">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/cart-3731224-3112098.png?f=avif&w=256"
+                id="cart-icon">
+        </div>
+    </div>
+
+    <div class="drop-downs">
+        <p id="new-product-page">New</p>
+        <p id="Massage" onmouseover={MassagePopup()} onmouseleave={Massageleave()}>Massage</p>
+        <p id="Wellness" onmouseover={WellnessPopup()} onmouseleave="{Wellnessleave()}">Wellness</p>
+        <p id="Sleep" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Sleep</p>
+        <p id="Home" onmouseover={SleepPopup()} onmouseleave="{Sleepleave()}">Home</p>
+        <!-- <p>Home</p> -->
+        <p>Wine & Bar</p>
+        <p>Outdoor</p>
+        <p>Technology</p>
+        <p>Travel</p>
+        <p>Accessories</p>
+        <p>Entertainment</p>
+        <p>Gifts</p>
+        <p>Sale</p>
+    </div>
+</nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        
+      </div>
+      <div class="col-md-9">
+        <div class="product-list" id="product-container">
+          <!-- Products will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="padding_4x" style="margin-top: 20px;">
+    <div class="flex">
+        <section class="flex-content padding_1x">
+            <h3>About</h3>
+            <a href="#" style="color: white;">Zoom Blog</a>
+            <a href="#" style="color: white;">Customers</a>
+            <a href="#" style="color: white;">Our Team</a>
+            <a href="#" style="color: white;">Careers</a>
+            <a href="#" style="color: white;" >Integrations</a>
+
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Download</h3>
+            <a href="#" style="color: white;">Meetings Client</a>
+            <a href="#" style="color: white;">Zoom Rooms Client</a>
+            <a href="#" style="color: white;">Zoom Rooms Controller</a>
+            <a href="#" style="color: white;">Browser Extension</a>
+            <a href="#" style="color: white;">Outlook Plug-in</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Sales
+            </h3>
+            <a href="#" style="color: white;">1.888.799.9666</a>
+            <a href="#" style="color: white;">Contact Sales</a>
+            <a href="#" style="color: white;">Plans & Pricing</a>
+            <a href="#" style="color: white;">Request a Demo</a>
+            <a href="#" style="color: white;">Webinars and Events</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3>Support
+            </h3>
+            <a href="#" style="color: white;">Test Talkies</a>
+            <a href="#" style="color: white;">Account</a>
+            <a href="#" style="color: white;">Support Center</a>
+            <a href="#" style="color: white;">Learning Center</a>
+            <a href="#" style="color: white;">Feedback</a>
+            <a href="#" style="color: white;">Contact Us</a>
+        </section>
+        <section class="flex-content padding_1x">
+            <h3 style="color: white;">Newsletter</h3>
+            <p style="color: white;">You can trust us. we only send promo offers,</p>
+            <fieldset class="fixed_flex">
+                
+                
+            </fieldset>
+        </section>
+        
+    </div>
+    <div class="flex">
+        <section class="flex-content padding_1x">
+            <p>Copyright ©2023 All rights reserved || Talkies - Let's connect</p>
+        </section>
+        <section class="flex-content padding_1x">
+            <a href="https://www.facebook.com/zoom"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/zoom"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/zoom/"><i class="fa fa-dribbble"></i></a>
+            <a href="https://www.linkedin.com/company/zoom-video-communications/"><i class="fa fa-linkedin"></i></a>
+        </section>
+    </div>
+</footer>
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
+
+<script>
+// script.js
+// document.addEventListener("DOMContentLoaded", () => {
+  const productContainer = document.getElementById("product-container");
+
+  fetch("https://colorful-ant-pleat.cyclic.app/data/get")
+    .then(response => response.json())
+    .then(data => renderProducts(data))
+    .catch(error => console.error("Error fetching data:", error));
+
+  function renderProducts(products) {
+    products.forEach((product, index) => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("product-card");
+
+      const productImage = document.createElement("img");
+      productImage.classList.add("product-image");
+      productImage.src = product.image;
+
+      const productName = document.createElement("div");
+      productName.classList.add("product-name");
+      productName.textContent = product.name;
+
+      const productPrice = document.createElement("div");
+      productPrice.classList.add("product-price");
+      productPrice.textContent = "$" + product.price;
+
+      const productButtons = document.createElement("div");
+      productButtons.classList.add("product-buttons");
+
+      const addToCartButton = document.createElement("button");
+      addToCartButton.classList.add("btn", "btn-primary", "product-button");
+      addToCartButton.textContent = "Add to Cart";
+
+      // Add click event listener to the "Add to Cart" button
+      addToCartButton.addEventListener("click", () => {
+        let token=localStorage.getItem("token");
+        if(token){
+          let cartItem=JSON.parse(localStorage.getItem("Favourites"));
+        Swal.fire(
+                    'Added to Cart',
+                    'Successful',
+                    'success'
+                  )
+                  setTimeout(() => {
+                  }, 2000);
+    if(cartItem==null){
+      cartItem=[];
+    }
+      cartItem.push({...product})
+      console.log(cartItem)
+      localStorage.setItem("Favourites",JSON.stringify(cartItem))
+        }else{
+          window.location.href="./register.html"
+        }
+        
+      });
+      const orderNowButton = document.createElement("button");
+      orderNowButton.classList.add("btn", "btn-success", "product-button");
+      orderNowButton.textContent = "Order Now";
+
+      productButtons.appendChild(addToCartButton);
+      productButtons.appendChild(orderNowButton);
+
+      productCard.appendChild(productImage);
+      productCard.appendChild(productName);
+      productCard.appendChild(productPrice);
+      productCard.appendChild(productButtons);
+      // productCard.appendChild(button);
+
+      productContainer.appendChild(productCard);
+      // productContainer.appendChild(productCard);
+    });
+  }
+
+  function addToCart(selectedProduct) {
+    // Save the selected product data to Local Storage
+    localStorage.setItem("selected_product", JSON.stringify(selectedProduct));
+
+    // Redirect to another page to show only the selected product
+    window.location.href = "product_detail.html";
+  }
+// });
+
+let inputsearch=document.querySelector("#search-input");
+inputsearch.addEventListener("input",()=>{
+  document.querySelector(".product-list").innerHTML=null;
+  let search=document.querySelector("#search-input").value
+  
+  fetch(`https://colorful-ant-pleat.cyclic.app/data/alldata?name=${search}`)
+    .then(response => response.json())
+    .then(data => {
+      renderProducts(data)
+    })
+    
+    .catch(error => console.error("Error fetching data:", error));
+})
+let product = document.querySelector("#new-product-page")
+    product.addEventListener("click", () => {
+        window.location.href = "./product.html"
+    })
+    let userslogo = document.querySelector("#user-icon")
+    userslogo.addEventListener("click", () => {
+        let tokendata = localStorage.getItem("token")
+        console.log(tokendata)
+        if(tokendata){
+            window.location.href="./profile.html"
+        }else{
+            window.location.href = "./register.html"
+        }
+        
+    })
+    let cartlogo = document.querySelector("#cart-icon")
+    cartlogo.addEventListener("click", () => {
+        let tokendata = localStorage.getItem("token")
+        
+        if (tokendata) {
+            window.location.href = "./cart.html"
+        }else{
+            window.location.href = "./register.html"
+        }
+        
+    })
+    let logo = document.querySelector("#logo-image");
+  logo.addEventListener("click", () => {
+    window.location.href = "../index.html"
+  })
+// 
+// window.location.reload()
+
+</script>
+

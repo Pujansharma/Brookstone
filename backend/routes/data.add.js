@@ -23,7 +23,7 @@ dataRouter.get("/get", async(req,res)=>{
     }
 })
 
-dataRouter.get("/", async(req,res)=>{
+dataRouter.get("", async(req,res)=>{
     const name=req.query.name;
     if(name){
         let data=await dataModel.find ({"name":{$regex:name,$options:'i'}});
